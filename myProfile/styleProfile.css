@@ -1,0 +1,377 @@
+/*----------------------------------------*/
+/* Template default CSS
+/*----------------------------------------*/
+
+html,body {
+	height: 100%;
+	font-family: "Mulish", sans-serif;
+	-webkit-font-smoothing: antialiased;
+    background-color: #f4f4f4 !important;
+    text-decoration: none;
+    margin: 0px;
+    
+}
+h1,h2,h3,h4,h5,h6 {
+	margin: 0;
+	color: #111111;
+	font-weight: 400;
+	font-family: "Mulish", sans-serif;
+}
+
+h1 {
+	font-size: 70px;
+    font-family: "Mulish", sans-serif;
+}
+
+h2 {
+	font-size: 36px;
+    font-family: "Mulish", sans-serif;
+}
+
+h3 {
+	font-size: 30px;
+    font-family: "Mulish", sans-serif;
+}
+
+h4 {
+	font-size: 24px;
+    font-family: "Mulish", sans-serif;
+}
+
+h5 {
+	font-size: 18px;
+    font-family: "Mulish", sans-serif;
+}
+
+h6 {
+	font-size: 16px;
+    font-family: "Mulish", sans-serif;
+}
+p {
+	font-size: 16px;
+	font-family: "Mulish", sans-serif;
+	color: black;
+	font-weight: 400;
+	line-height: 26px;
+	margin: 0 0 15px 0;
+    text-decoration: none;
+}
+a{
+    color: black;
+}
+a:hover,a:focus {
+	text-decoration: none !important;
+	outline: none !important;
+	color: #fff;
+}
+ul,ol {
+	padding: 0;
+	margin: 0;
+    list-style: none;
+}
+img {
+	max-width: 100%;
+}
+
+/*----------------------------------------*/
+/* Default
+/*----------------------------------------*/
+
+.nav{
+    width: 17rem;
+    height: 100vh;
+    background-color: #bd5d38 !important;
+    
+    position: fixed;
+}
+.nav-img{
+    text-align: center;
+
+    margin-bottom: 0.5rem !important;
+    padding-top: 180px;
+}
+.nav-img img{
+    align-items: center;
+    border-radius: 50% !important;
+    box-sizing: border-box;
+    max-width: 10rem;
+    max-height: 10rem;
+    border: 0.5rem solid rgba(255, 255, 255, 0.2);
+}
+
+.nav-category{
+    padding-top: 20px;
+    line-height: 40px;
+    font-weight: 800;
+    letter-spacing: 0.05rem;
+    color: #fff;
+}
+.nav-item-lable{
+    display: block;
+    text-align: center;
+}
+
+/*----------------------------------------*/
+/* About
+/*----------------------------------------*/
+.about-content{
+    position: absolute;
+    width: 77rem;
+    height: 100vh;
+    margin-left: 17rem;
+    margin-top: -406px;
+    background-color: #ffffff;
+    z-index: 0;
+}
+.about-content-box{
+    width: 80%;
+    margin-left: 60px;
+    margin-top: 200px;
+    
+}
+.about-content-box h1{
+    line-height: 1;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.about-content-box h1 span{
+    color: #bd5d38 !important;
+}
+.about-content-address{
+    text-transform: uppercase;
+    font-weight: 500;
+    
+    color: #6c757d;
+    font-weight: 700;
+}
+.about-content-address span{
+    color: #bd5d38 !important;
+}
+.about-content-box p{
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    width: 1000px;
+    color: #6c757d;
+    margin-top: 30px;
+    line-height: 30px;
+    font-size: 18px;
+}
+.about-content-icon img{
+    width: 70px;
+    height: auto;
+    margin: 10px 20px;
+}
+
+/*----------------------------------------*/
+/* Experience
+/*----------------------------------------*/
+.exp-content{
+    position: absolute;
+    width: 77rem;
+    height: 100vh;
+    margin-left: 17rem;
+    margin-top: -406px;
+    background-color: #ffffff;
+    z-index: -1;
+    line-height: 30px;
+    
+}
+.exp-content-box{
+    width: 90%;
+    margin-left: 60px;
+    margin-top: 60px;
+}
+.exp-content-box h1{
+    font-weight: 700;
+}
+.exp-content-box-lable{
+    text-transform: uppercase;
+    color: #343a40;
+    width: 900px;
+
+}
+.exp-content-box-lable h4{
+    font-weight: 700;
+}
+.exp-content-box-date{
+    width: 350px;
+    text-align: end;
+    color:#bd5d38;
+}
+.exp-content-box-lable-2{
+    color:#6c757d;
+}
+.exp-content-box-text{
+    color:#6c757d;
+    padding-bottom: 50px;
+}
+
+
+/*----------------------------------------*/
+/* Education
+/*----------------------------------------*/
+.edu-content{
+    position: absolute;
+    width: 77rem;
+    height: 100vh;
+    margin-left: 17rem;
+    margin-top: -406px;
+    background-color: #ffffff;
+    z-index: -1;
+    line-height: 30px;
+    
+}
+.edu-content-box{
+    width: 90%;
+    margin-left: 60px;
+    margin-top: 40px;
+}
+.edu-content-box h1{
+    font-weight: 700;
+}
+
+.edu-content-box-lable{
+    text-transform: uppercase;
+    color: #343a40;
+    width: 900px;
+
+}
+.edu-content-box-lable h4{
+    font-weight: 700;
+}
+.edu-content-box-date{
+    width: 350px;
+    text-align: end;
+    color:#bd5d38;
+}
+.edu-content-box-lable-2{
+    color:#6c757d;
+}
+.edu-content-box-text{
+    color:#6c757d;
+    padding-bottom: 50px;
+}
+/*----------------------------------------*/
+/* Skill
+/*----------------------------------------*/
+.skill-content{
+    position: absolute;
+    width: 77rem;
+    height: 100vh;
+    margin-left: 17rem;
+    margin-top: -406px;
+    background-color: #ffffff;
+    z-index: -1;
+    line-height: 30px;
+    
+}
+.skill-content-box{
+    width: 90%;
+    margin-left: 60px;
+    margin-top: 20px;
+    
+}
+.skill-content-box h1{
+    font-weight: 700;
+    text-transform: uppercase;
+    padding-bottom: 40px;
+}
+.skill-content-address{
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #6c757d;
+    font-weight: 700;
+}
+.skill-content-icon img{
+    width: 60px;
+    margin: 10px 10px;
+}
+.skill-content-address{
+    font-weight: 700;
+    font-size: 24px;
+}
+.skill-content-text{
+    color: #6c757d;
+    padding-left: 15px;
+}
+/*----------------------------------------*/
+/* Interests
+/*----------------------------------------*/
+.inter-content{
+    position: absolute;
+    width: 77rem;
+    height: 100vh;
+    margin-left: 17rem;
+    margin-top: -406px;
+    background-color: #ffffff;
+    z-index: -1;
+    line-height: 30px;
+    
+}
+.inter-content-box{
+    width: 90%;
+    margin-left: 60px;
+    margin-top: 20px;
+    
+}
+.inter-content-box h1{
+    font-weight: 700;
+    text-transform: uppercase;
+    padding-bottom: 40px;
+}
+.inter-content-box p{
+    color: #6c757d;
+}
+/*----------------------------------------*/
+/* Awards
+/*----------------------------------------*/
+.award-content{
+    position: absolute;
+    width: 77rem;
+    height: 100vh;
+    margin-left: 17rem;
+    margin-top: -406px;
+    background-color: #ffffff;
+    z-index: -1;
+    line-height: 30px;
+    
+}
+.award-content-box{
+    width: 90%;
+    margin-left: 60px;
+    margin-top: 20px;
+    
+}
+.award-content-box h1{
+    font-weight: 700;
+    text-transform: uppercase;
+    padding-bottom: 40px;
+}
+.award-content-box span{
+    color: #6c757d;
+}
+
+/*----------------------------------------*/
+/* Hover
+/*----------------------------------------*/
+.nav-item:hover .about-content{
+    z-index: 1;
+}
+.nav-item:hover .exp-content{
+    z-index: 1;
+}
+.nav-item:hover .edu-content{
+    z-index: 1;
+}
+.nav-item:hover .skill-content{
+    z-index: 1;
+}
+.nav-item:hover .inter-content{
+    z-index: 1;
+}
+.nav-item:hover .award-content{
+    z-index: 1;
+}
