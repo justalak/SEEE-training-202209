@@ -1,0 +1,36 @@
+body {
+    background-color: rgb(49, 49, 71);
+  }
+h1{
+    color: white;
+    margin-left: 10px;
+  }
+h3{
+    color: white;
+    margin-left:20px;
+    border-bottom: 2px solid white;
+}
+h5{
+    text-align: center;
+}
+.flex_container1 {
+    border-radius: 10px;
+    margin-left:20px;
+    display: flex;
+    background-color: gray;
+    flex-direction: row;
+    justify-content: left;
+    align-items: end;
+}
+.flex_container2{
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px;
+}
+.flex_container2 > div{
+    border-radius: 20px;
+    background-color: grey;
+    margin: 15px;
+    padding: 20px;
+}
+  
