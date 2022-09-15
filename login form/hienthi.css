@@ -1,0 +1,17 @@
+.a{
+    display: inline-block;
+    border: 2px groove red;
+    margin-right: 30px;
+    padding: 5px;
+}
+.b{
+    display: inline-block;
+
+}
+.c{
+    margin-left: 80px;
+}
+.d{
+    border: 3px groove red;  
+     padding: 20px;
+}

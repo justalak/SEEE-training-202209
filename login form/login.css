@@ -1,0 +1,21 @@
+label {
+    color: blue;
+   font-size: 18px;
+  
+}
+input{
+    color: black;
+    font-size: 16px;
+   }
+   div {
+    margin-bottom: 10px;
+   }
+   #nhap{
+    color: brown;
+    font-size: 25px;
+   }
+   #submit {
+    color:blueviolet;
+    margin-left: 70px;
+    margin-top: 15px;
+   }
