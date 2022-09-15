@@ -1,0 +1,35 @@
+#first{
+    color: red;
+    font-size: 40px;
+}
+#avatar{
+    width: 125px;
+    height: 200px;
+    border-collapse: 50%;
+    margin-top: 6px;
+}
+body {
+    background-color: orange;
+  }
+:root{
+    --font-size: 40px;
+}
+ .head{
+    color: black;
+    font-size: var(--font-size);
+    text-decoration: underline;
+ }
+.second .li-second{
+    color: orangered;
+    font-size: 25px;
+} 
+.third .li-third{
+    color: purple;
+    font-size: 25px;
+}
+
+.forth .li-forth{
+    color: blue;
+    font-size: 25px;
+}
+/* Thẻ số 5 */
