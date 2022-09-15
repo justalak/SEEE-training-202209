@@ -1,0 +1,57 @@
+body{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.container{
+    padding: 20px 100px;
+    background: linear-gradient(120deg,#2980b9, #8e44ad);
+    color: #fff;
+    height: 100vh;
+    overflow: hidden;
+}
+.logo{
+    font-weight: 700;
+}
+.box{
+    width: 100%;
+}   
+.box .title{
+    border-bottom: 2px solid #adadad;
+}
+.box .content{
+    margin-top: 20px;
+}
+.box .content img{
+    height: 100%;
+    object-fit:fill;
+}
+.info .content{
+    display: flex;
+    flex-direction: row ;
+    height: 100px;
+    box-sizing: border-box;
+}
+.skill ul{
+    list-style:decimal;
+}
+.project .content{
+    display: flex;
+    flex-direction: row;
+}
+.project .title-project{
+    margin-bottom: 10px;
+    color: #2980b9;
+}
+.project .project-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    color: #000;
+    margin-right: 20px;
+    box-sizing: border-box;
+    padding: 20px;
+    border-radius: 10px;
+}
