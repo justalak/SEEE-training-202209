@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="img/online-survey.png">
+    <link rel="stylesheet" href="css/myform.css">
+    <title>Personal Form</title>
+</head>
+<body>
+
+    <div class="center">
+        <h1>Your Infomation</h1>
+        <form action="index.html" method="get" id="myform">
+            <div class="detail">
+                <input class="input" id="name" name="name" rules="required" type="text" placeholder=" ">
+                <label class="label">Name</label>
+                <span class="mess"></span>
+            </div>
+            <div class="detail">
+                <input class="input" id="phone" name="phone" rules="required|length:10" type="number" placeholder=" ">
+                <label class="label">Phone Number</label>
+                <span class="mess"></span>
+            </div>
+            <div class="detail">
+                <input class="input" id="email" name="email" rules="required|email" type="email" placeholder=" ">
+                <label class="label">Email</label>
+                <span class="mess"></span>
+            </div>
+            <div class="detail">
+                <input class="input" id="address" name="address" rules="required" type="text" placeholder=" ">
+                <label class="label">Address</label>
+                <span class="mess"></span>
+            </div>
+            
+            <div class="button">
+                <button>Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="js/Validate.js"></script>
+    <script>
+        var form = new Validate('#myform');
+        form.onSubmit = function (data) {
+            // console.log(data);
+            sessionStorage.setItem("name", data.name);
+            sessionStorage.setItem("phone", data.phone);
+            sessionStorage.setItem("email", data.email);
+            sessionStorage.setItem("address", data.address);
+        }
+    </script>
+</body>
+</html>

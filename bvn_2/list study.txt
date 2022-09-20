@@ -1,0 +1,7 @@
+event listener
+json
+promise
+fetch
+dom location
+local storage
+session storage
