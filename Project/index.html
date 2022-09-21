@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuyen'Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="frame" id="frame">
+        <div class="head">
+            <h1 class="heading">Wellcome back</h1>
+        </div>
+        <div class="massage">Enter your information</div>
+        <div class="form">
+            <form>
+                <input type="text" name="name" id="name" placeholder="Enter your name"><br><br>
+                <input type="text" name="Phone Number" id="Phone Number" placeholder="Enter your phone number"><br><br>
+                <input type="text" name="Email" id="Email" placeholder="Enter your email"><br><br>
+                <input type="text" name="Address" id="Address" placeholder="Enter your address"><br><br><br>
+                <button type="button" onclick="myFunction()">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div class="hienthi" id="hienthi">
+        <h1 id="headht">Your Information</h1>
+        <div class="person-info">
+            <div class="fr"></div>
+            <h2>Personal Information</h2>
+            <hr color="green" width="100%" />
+            <span class="img">
+                <img src="https://thuthuatnhanh.com/wp-content/uploads/2020/03/hinh-nen-cute-de-thuong-cho-dien-thoai.png"
+                    alt="" width=150 height=130></span>
+
+            <span class="img">
+
+                <ul>
+                    <li name="namef">Trịnh Quang Tuyến</li>
+                    <li name="phone_numberf">Number: 0378183599</li>
+                    <li name="emailf">Email: tuyen.tq196733@sis.hust.edu.vn</li>
+                    <li name="addressf">Hải Tân, Hải Hậu, Nam Định</li>
+                </ul>
+            </span>
+        </div>
+        <div class="Education">
+            <h2>Education</h2>
+            <hr color="green" width="100%" />
+            <ul class="edu">
+                <li>Khóa: K64</li>
+                <li>Ngành: Điện Tử Viễn Thông</li>
+                <li>Đại học Bách Khoa Hà Nội</li>
+            </ul>
+        </div>
+        <div>
+            <div class="d">
+                <div class="skill">
+                    <h2>Skill</h2>
+                    <hr color="green" width="100%" />
+                    <ol>
+                        <li>Java</li>
+                        <li>C++</li>
+                        <li>JavaScript</li>
+                    </ol>
+                </div>
+                <h2>Project</h2>
+                <hr color="green" width="100%" />
+                <span class="a">
+                    <u class="c">Project1</u>
+                    <ul>
+                        <li>Hoster booking website</li>
+                        <li>User: view, search, book</li>
+                        <li>Admin: Management(CRUD)</li>
+                    </ul>
+                </span>
+                <span class="a">
+                    <u class="c">Project2</u>
+                    <ul>
+                        <li>Training online website</li>
+                        <li>User: view, search, hire mentor</li>
+                        <li>Admin: Management(CRUD)</li>
+                    </ul>
+                </span>
+                <span class="a">
+                    <u class="c">Project3</u>
+                    <ul>
+                        <li>StudentManagement</li>
+                        <li>view, search, filter, sort</li>
+                        <li>Management(CRUD)</li>
+                    </ul>
+                </span>
+            </div>
+        </div>
+    </div>
+    <script>
+        function myFunction() {
+            const name_tag = document.getElementsByName("namef")[0];
+            const phoneNumber_tag = document.getElementsByName("phone_numberf")[0];
+            const Email_tag = document.getElementsByName("emailf")[0];
+            const Address_tag = document.getElementsByName("addressf")[0];
+            const username = document.getElementById('name').value;
+            const phoneNumber = document.getElementById('Phone Number').value;
+            const Email = document.getElementById('Email').value;
+            const Address = document.getElementById('Address').value;
+            name_tag.innerText = username;
+            phoneNumber_tag.innerText = phoneNumber;
+            Email_tag.innerText = Email;
+            Address_tag.innerText = Address;
+            document.getElementById("frame").style.display = 'none';
+            document.getElementById("hienthi").style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>
