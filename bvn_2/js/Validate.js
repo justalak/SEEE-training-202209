@@ -1,5 +1,5 @@
 
-function Validate (formSelector) {
+function Validate (idForm) {
 
     function onSubmit(data){
         sessionStorage.setItem("name", data.name);
@@ -8,7 +8,7 @@ function Validate (formSelector) {
         sessionStorage.setItem("address", data.address);
     }
 
-    var formElement = document.querySelector(formSelector);
+    var formElement = document.querySelector(idForm);
     var formRules = {};
 
     // defind rules
@@ -27,71 +27,69 @@ function Validate (formSelector) {
         }
     }
 
-    if(formElement){
-        var inputs = formElement.querySelectorAll('[name][rules]');
-        for(var input of inputs){
-            var rules = input.getAttribute('rules').split('|');
-            for(var rule of rules){
-                var ruleInfo;
-                var isRuleHasValue = rule.includes(':');
-                if(isRuleHasValue){
-                    ruleInfo = rule.split(':');
-                    rule = ruleInfo[0];
-                }
-                var ruleFunc = validateRules[rule];
-                if(isRuleHasValue){
-                    ruleFunc = ruleFunc(ruleInfo[1]);
-                }
-                if(Array.isArray(formRules[input.name])){
-                    formRules[input.name].push(ruleFunc);
-                }else {
-                    formRules[input.name] = [ruleFunc];
-                }
+    // get all rules of elements
+    var inputs = formElement.querySelectorAll("[rules]");
+    for(var input of inputs){
+        var rules = input.getAttribute('rules').split('|');
+        for(var rule of rules){
+            var ruleInfo;
+            var isRuleHasValue = rule.includes(':');
+            if(isRuleHasValue){
+                ruleInfo = rule.split(':');
+                rule = ruleInfo[0];
             }
-
-            // listen event
-            input.onblur = formValidator;
-            
-            input.oninput = function (event) {
-                var formGroup = event.target.parentElement;
-                if( formGroup.classList.contains('.invalid') ) {
-                    formGroup.classList.remove('.invalid');
-                    var formMessage = formGroup.querySelector('.mess'); 
-                    if( formMessage ){
-                        formMessage.innerText = '';
-                    }
-                }
-            };
+            var ruleFunc = validateRules[rule];
+            if(isRuleHasValue){
+                ruleFunc = ruleFunc(ruleInfo[1]);
+            }
+            if(Array.isArray(formRules[input.name])){
+                formRules[input.name].push(ruleFunc);
+            }else {
+                formRules[input.name] = [ruleFunc];
+            }
         }
 
-        function formValidator(event) {
-            var rules = formRules[event.target.name];
-            var errorMessage;
-            for(var rule of rules){
-                errorMessage = rule(event.target.value);
-                if(errorMessage){
-                    break;
+        // listen event -> validate
+        input.onblur = formValidator;       // when blur -> valadate mesage
+
+        input.oninput = function (event) {  // remove validate mess when true
+            var inputGroup = event.target.parentElement;
+            if( inputGroup.classList.contains('.invalid') ) {
+                inputGroup.classList.remove('.invalid');
+                var formMessage = inputGroup.querySelector('.mess'); 
+                if( formMessage ){
+                    formMessage.innerText = '';
                 }
             }
-            if(errorMessage){
-                var formGroup = event.target.parentElement;
-                if( formGroup ) {
-                    formGroup.classList.add('.invalid');
-                    var formMessage = formGroup.querySelector('.mess');
-                    if( formMessage ){
-                        formMessage.innerText = errorMessage;
-                    }
-                }
-            }
-            return !errorMessage;
-        }
+        };
     }
 
-    // var _this = this;
+    function formValidator(event) {
+        var rules = formRules[event.target.name];
+        var errorMessage;
+        for(var rule of rules){
+            errorMessage = rule(event.target.value);
+            if(errorMessage){
+                break;
+            }
+        }
+        if(errorMessage){
+            var inputGroup = event.target.parentElement;
+            if( inputGroup ) {
+                inputGroup.classList.add('.invalid');
+                var formMessage = inputGroup.querySelector('.mess');
+                if( formMessage ){
+                    formMessage.innerText = errorMessage;
+                }
+            }
+        }
+        return !errorMessage;
+    }
 
+    // action submit
     formElement.onsubmit = function (event) {
         event.preventDefault();
-        var inputs = formElement.querySelectorAll('[name][rules]');
+        var inputs = formElement.querySelectorAll('[rules]');
         var isValid = true;
         for(var input of inputs){
             if (!formValidator({ target: input })) {
@@ -100,12 +98,12 @@ function Validate (formSelector) {
         }
         if(isValid){            
             if(typeof onSubmit === 'function'){
-                var enableInput = formElement.querySelectorAll('[name][rules]');
-                var formValues = Array.from(enableInput).reduce( function (values, input) {
+                var enableInput = formElement.querySelectorAll('[rules]');
+                var inputValues = Array.from(enableInput).reduce( function (values, input) {
                     values[input.name] = input.value;
                     return values;
                 }, {} );
-                onSubmit(formValues);
+                onSubmit(inputValues);
                 formElement.submit();
             }else{
                 formElement.submit();

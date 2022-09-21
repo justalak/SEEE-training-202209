@@ -1,7 +1,7 @@
 event listener
-json
-promise
-fetch
+json                    -- not done
+promise                 -- not done
+fetch                   -- not done
 dom location
-local storage
-session storage
+local storage           -- not done
+session storage         -- not done
