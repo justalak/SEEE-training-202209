@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width= device-width, initial-scale=1.0">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/919/919827.png">
+    <link rel="stylesheet" type="text/css" href="styleform.css">
+    <title>Please fill out the form</title>
+    <script src="./form.js"></script>
+</head>
+
+<body>
+    <div id="formpage" class="formpage ">
+        <h2>Enter your information</h2>
+        <div class="style">
+            <form>
+                <label for="fname">Enter first name:</label><br>
+                <input type="text" id="fname" name="fname" placeholder="First name" required><br>
+                <label for="lname">Enter last name:</label><br>
+                <input type="text" id="lname" name="lname" placeholder="Last name" required><br>
+                <label for="pnumber">Enter phone number:</label><br>
+                <input type="text" id="pnumber" name="pnumber" placeholder="Phone number" required><br>
+                <label for="address">Enter address:</label><br>
+                <input type="text" id="address" name="address" placeholder="Address" required><br>
+                <label for="email">Enter email:</label><br>
+                <input type="text" id="email" name="email" placeholder="Email" required><br><br>
+                <button type="button" class="button" onClick="myFunction()">Submit</button>
+        </div>
+    </div>
+    <div id="inforpage" class="inforpage hidden">
+    <h1 class="Name">Peter Griffin</h1>
+        <h3>Personal information</h3>
+        <div class="flex_container1 style">
+            <div ><img src="https://img.freepik.com/free-vector/cute-astronaut-floating-space-cartoon-vector-icon-illustration-science-technology-icon-concept_138676-4330.jpg?w=2000" width="200" height="100%" ></div>
+            <div > 
+                <ul>
+                    <li>Number: <span class="PNumber">093659xxxx</span></li>
+                    <li>Email: <span class="Email">griffin.peter66999@gmail.com</span></li>
+                    <li>Address: <span class="Address">Washington DC</span></li>
+                </ul>
+            </div>
+        </div>
+        <h3>Skills</h3>
+        <div class="flex_container1 ">
+            <h4>
+            <ol>
+                <li>HTML</li>
+                <li>Javascript</li>
+                <li>Python</li>
+                <li>C#</li>
+            </ol>
+            </h4>
+        </div>
+        <h3>Project</h3>
+        <div class="flex_container2">
+            <div>
+                <h5>Project 1</h5>
+                <ul>
+                    <li>Bank card management</li>
+                    <li>User:Add,view,check,sort</li>
+                    <li>Admin: Management</li>
+                </ul>
+            </div>
+            <div>
+                <h5>Project 2</h5>
+                <ul>
+                    <li>Grocery shop management</li>
+                    <li>User:View,check,sort</li>
+                    <li>Management</li>
+                </ul>
+            </div>
+            <div>
+                <h5>Project 3</h5>
+                <ul>
+                    <li>Employee management</li>
+                    <li>User:View,find,check-in</li>
+                    <li>Management</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
