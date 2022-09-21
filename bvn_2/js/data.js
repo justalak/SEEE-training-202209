@@ -1,3 +1,4 @@
+
 var nameData = sessionStorage.getItem("name");
 var phoneData = sessionStorage.getItem("phone");
 var emailData = sessionStorage.getItem("email");
@@ -21,4 +22,3 @@ function titleCase(string) {
     return sentence.join(" ");
 }
 
-console.log(nameData);

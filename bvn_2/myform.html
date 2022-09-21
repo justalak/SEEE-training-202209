@@ -24,7 +24,7 @@
                 <span class="mess"></span>
             </div>
             <div class="detail">
-                <input class="input" id="email" name="email" rules="required|email" type="email" placeholder=" ">
+                <input class="input" id="email" name="email" rules="required|email" type="text" placeholder=" ">
                 <label class="label">Email</label>
                 <span class="mess"></span>
             </div>
@@ -43,13 +43,13 @@
     <script src="js/Validate.js"></script>
     <script>
         var form = new Validate('#myform');
-        form.onSubmit = function (data) {
-            // console.log(data);
-            sessionStorage.setItem("name", data.name);
-            sessionStorage.setItem("phone", data.phone);
-            sessionStorage.setItem("email", data.email);
-            sessionStorage.setItem("address", data.address);
-        }
+        // form.onSubmit = function (data) {
+        //     // console.log(data);
+        //     sessionStorage.setItem("name", data.name);
+        //     sessionStorage.setItem("phone", data.phone);
+        //     sessionStorage.setItem("email", data.email);
+        //     sessionStorage.setItem("address", data.address);
+        // }
     </script>
 </body>
 </html>

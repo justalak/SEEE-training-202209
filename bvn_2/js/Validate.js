@@ -1,19 +1,15 @@
 
 function Validate (formSelector) {
 
-
+    function onSubmit(data){
+        sessionStorage.setItem("name", data.name);
+        sessionStorage.setItem("phone", data.phone);
+        sessionStorage.setItem("email", data.email);
+        sessionStorage.setItem("address", data.address);
+    }
 
     var formElement = document.querySelector(formSelector);
     var formRules = {};
-
-    function getParents(element, selector){
-        while (element.parentElement) {
-            if( element.parentElement.matches(selector) ){
-                return element.parentElement;
-            }
-            element = element.parentElement;
-        }
-    }
 
     // defind rules
     var validateRules = {
@@ -22,7 +18,7 @@ function Validate (formSelector) {
         },
         email: function (value) {
             var regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-            return regex.test(value) ? undefined : `Please fill your email in`;
+            return regex.test(value) ? undefined : `Please check your email`;
         },
         length: function (number) {
             return function (value) {
@@ -55,7 +51,17 @@ function Validate (formSelector) {
 
             // listen event
             input.onblur = formValidator;
-            input.oninput = clearFormValidator;
+            
+            input.oninput = function (event) {
+                var formGroup = event.target.parentElement;
+                if( formGroup.classList.contains('.invalid') ) {
+                    formGroup.classList.remove('.invalid');
+                    var formMessage = formGroup.querySelector('.mess'); 
+                    if( formMessage ){
+                        formMessage.innerText = '';
+                    }
+                }
+            };
         }
 
         function formValidator(event) {
@@ -68,7 +74,7 @@ function Validate (formSelector) {
                 }
             }
             if(errorMessage){
-                var formGroup = getParents(event.target, '.detail');
+                var formGroup = event.target.parentElement;
                 if( formGroup ) {
                     formGroup.classList.add('.invalid');
                     var formMessage = formGroup.querySelector('.mess');
@@ -79,20 +85,9 @@ function Validate (formSelector) {
             }
             return !errorMessage;
         }
-
-        function clearFormValidator(event) {
-            var formGroup = getParents(event.target, '.detail');
-            if( formGroup.classList.contains('.invalid') ) {
-                formGroup.classList.remove('.invalid');
-                var formMessage = formGroup.querySelector('.mess'); 
-                if( formMessage ){
-                    formMessage.innerText = '';
-                }
-            }
-        }
     }
 
-    var _this = this;
+    // var _this = this;
 
     formElement.onsubmit = function (event) {
         event.preventDefault();
@@ -104,16 +99,13 @@ function Validate (formSelector) {
             }
         }
         if(isValid){            
-            if(typeof _this.onSubmit === 'function'){
+            if(typeof onSubmit === 'function'){
                 var enableInput = formElement.querySelectorAll('[name][rules]');
                 var formValues = Array.from(enableInput).reduce( function (values, input) {
-                    switch( input.type ) {
-                        default:
-                            values[input.name] = input.value;
-                    }
+                    values[input.name] = input.value;
                     return values;
                 }, {} );
-                _this.onSubmit(formValues);
+                onSubmit(formValues);
                 formElement.submit();
             }else{
                 formElement.submit();
