@@ -81,7 +81,8 @@ img {
     width: 17rem;
     height: 100vh;
     background-color: #bd5d38 !important;
-    
+    /* display: none; */
+    /* z-index: 100; */
     position: fixed;
 }
 .nav-img{

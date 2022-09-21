@@ -20,15 +20,21 @@
                     
                     <div class="about-content">
                         <div class="about-content-box">
-                            <h1>Do <span>Kim Hoan</span></h1>
+                            <h1>
+                                <span id="fname"> Do</span>
+                                <span id="lname">Kim Hoan</span></h1>
                             <div class="about-content-address">
-                                Phuc Tho · Ha Noi · (+84) 385666809 · <span>hoan.dk0110@gmail.com</span> 
+                                <span id="address">Phuc Tho · Ha Noi</span>
+                                · 
+                                <span id="phoneNumber">(+84) 385666809</span>
+                                ·
+                                <span id="email">hoan.dk0110@gmail.com</span>
                             </div>
-                            <p>I am experienced in leveraging agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.</p>
+                            <p id="notes">I am experienced in leveraging agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.</p>
                             <div class="about-content-icon">
-                                <a href="https://www.facebook.com/Hoan.DK01"><img src="/myProfile/image/facebook.png" alt=""></a>
-                                <a href="https://github.com/hoanDK0110"><img src="/myProfile/image/github.png"></a>
-                                <a href="https://www.instagram.com/hoan.dk01"><img src="/myProfile/image/Instagram.webp" alt=""></a>
+                                <a href="https://www.facebook.com/Hoan.DK01" id="facebook"><img src="/myProfile/image/facebook.png" alt=""></a>
+                                <a href="https://github.com/hoanDK0110" id="github"><img src="/myProfile/image/github.png"></a>
+                                <a href="https://www.instagram.com/hoan.dk01" id="insta"><img src="/myProfile/image/Instagram.webp" alt=""></a>
                             </div>
                         </div>
                         
@@ -185,4 +191,32 @@
         </div>
     </div>
 </body>
+
+<script>
+    
+    var fnameData = sessionStorage.getItem("fname");
+    var lnameData = sessionStorage.getItem("lname");
+    var addressData = sessionStorage.getItem("address");
+    var phoneNumberData = sessionStorage.getItem("phoneNumber");
+    var emailData = sessionStorage.getItem("email");
+    var facebookData = sessionStorage.getItem("facebook");
+    var instaData = sessionStorage.getItem("insta");
+    var githubData = sessionStorage.getItem("github");
+    var notesData = sessionStorage.getItem("notes");
+    var expData = sessionStorage.getItem("exp");
+
+    document.getElementById('fname').outerHTML = `<span id="fname">${fnameData}</span>`;
+    document.getElementById('lname').outerHTML = `<span id="lname">${lnameData}</span>`;
+    document.getElementById('address').outerHTML = `<span id="address">${addressData}</span>`;
+    document.getElementById('phoneNumber').outerHTML = `<span id="phoneNumber">${phoneNumberData}</span>`;
+    document.getElementById('email').outerHTML = `<span id="email">${emailData}</span>`;
+    document.getElementById('notes').outerHTML = ` <p id="notes">${notesData}</p>`;
+
+    document.getElementById('facebook').setAttribute('href', `tel:${facebookData}`);
+    document.getElementById('github').setAttribute('href', `facebook:${githubData}`);
+    document.getElementById('insta').setAttribute('href', `instato:${instaData}`);
+
+   
+
+</script>
 </html>

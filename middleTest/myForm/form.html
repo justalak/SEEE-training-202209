@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleForm.css">
+    <link rel="stylesheet" href="/myProfile/styleProfile.css">
+    <title>Form Information</title>
+</head>
+<body>
+    <div class="container">
+        <div class="content-box">
+            <div class="header">
+                <h1>Form Information</h1>
+            </div>
+            <form id="form" action="/myProfile/myProfile.html">   
+                <table>
+                    <tr>
+                        <td class="input-width">
+                            <label for="fname">First Name</label>
+                            <input type="text" id="fname" name="firstName" placeholder="Your name.." onkeyup="upperCase()">
+                        </td>
+                        <td class="input-width">
+                            <label for="lname">Last Name</label>
+                            <input type="text" id="lname" name="lastName" placeholder="Your last name.." onkeyup="upperCase()">
+                        </td>
+                    </tr>
+                    <tr>
+                    </tr>
+                    <tr>
+                        <td class="input-width">
+                            <label for="fname">Address</label>
+                            <input type="text" id="address" name="address" placeholder="Your address.." onkeyup="upperCase()">
+                        </td>
+                        <td class="input-width">
+                            <label for="lname">Phone number</label>
+                            <input type="text" id="phoneNumber" name="phoneNumber" placeholder="0984xxxxx">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="input-width">
+                            <label for="fname">Email</label>
+                            <input type="text" id="email" name="email" placeholder="Your email.." onkeyup="upperCase()">
+                        </td>
+                        <td class="input-width">
+                            <label for="lname">Facebook</label>
+                            <input type="text" id="facebook" name="facebook" placeholder="https://www.facebook.com/ABC">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="input-width">
+                            <label for="fname">Instagram</label>
+                            <input type="text" id="insta" name="instagarm" placeholder="https://www.instagram.com/ABC">
+                        </td>
+                        <td class="input-width">
+                            <label for="lname">Github</label>
+                            <input type="text" id="github" name="github" placeholder="https://github.com/ABC">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="input-width">
+                            <label for="lname">Notes</label>
+                            <br>
+                            <textarea style="resize: none; margin-left: 10px" rows = "8" cols="65"  name="notes" id="notes" placeholder="About you..." onkeyup="upperCase()"></textarea>
+                        </td>
+                        <td class="input-width">
+                            <label for="lname">Experience</label>
+                            <br>
+                            <textarea style="resize: none; margin-left: 10px" rows = "8" cols="65"  name="exp" id="exp" placeholder="Your experience..." onkeyup="upperCase()"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="input-width">
+                            <input type="submit" value="Submit" onclick="submitForm()" class="submit">
+                        </td>
+                        <td class="input-width">
+                            <input type="button" value="Reset" onclick="resetForm()" class="reset">
+                        </td>
+                    </tr>
+                </table>
+                
+              </form>
+        </div>
+    </div>
+</body>
+
+<script>
+    const fname = document.getElementById("fname");
+    const lname = document.getElementById("lname");
+    const address = document.getElementById("address");
+    const phoneNumber = document.getElementById("phoneNumber");
+    const email = document.getElementById("email");
+    const facebook = document.getElementById("facebook");
+    const insta = document.getElementById("insta");
+    const github = document.getElementById("github");
+    const notes = document.getElementById("notes");
+    const exp = document.getElementById("exp");
+    function checkForm(){
+        if(fname.value == "" || lname.value == "" || address.value == "" || phoneNumber.value == "" || email.value == "" || facebook.value == "" || insta.value == "" || github.value == "" || notes.value == "" || exp.value == ""){
+            alert("Bạn hãy điền đầy đủ thông tin!");
+            return false;
+        }
+        else{
+            return true;
+        }
+
+    }
+    
+    function resetForm(){
+        if(confirm("Bạn muốn xóa hết thông tin?")){
+            document.getElementById("form").reset();  
+        }
+    }
+    function upperCase() {
+        fname.value = fname.value.toUpperCase();
+        lname.value = lname.value.toUpperCase();
+        address.value = address.value.toUpperCase();
+        email.value = email.value.toUpperCase();
+        exp.value = exp.value.toUpperCase();
+    }
+    function submitForm(event){
+        
+        if(checkForm()){
+            if(confirm("Bạn muốn lưu thông tin!")){
+                sessionStorage.setItem("fname", fname.value);
+                sessionStorage.setItem("lname", lname.value);
+                sessionStorage.setItem("address", address.value);
+                sessionStorage.setItem("phoneNumber", phoneNumber.value);
+                sessionStorage.setItem("email", email.value);
+                sessionStorage.setItem("facebook", facebook.value);
+                sessionStorage.setItem("insta", insta.value);
+                sessionStorage.setItem("github", github.value);
+                sessionStorage.setItem("notes", notes.value);
+                sessionStorage.setItem("exp", exp.value);
+            }
+        }
+        
+    }
+</script>
+</html>
