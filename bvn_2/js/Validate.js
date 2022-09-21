@@ -1,5 +1,8 @@
 
 function Validate (formSelector) {
+
+
+
     var formElement = document.querySelector(formSelector);
     var formRules = {};
 
@@ -51,11 +54,11 @@ function Validate (formSelector) {
             }
 
             // listen event
-            input.onblur = handelValidate;
-            input.oninput = handelClearError;
+            input.onblur = formValidator;
+            input.oninput = clearFormValidator;
         }
 
-        function handelValidate(event) {
+        function formValidator(event) {
             var rules = formRules[event.target.name];
             var errorMessage;
             for(var rule of rules){
@@ -77,7 +80,7 @@ function Validate (formSelector) {
             return !errorMessage;
         }
 
-        function handelClearError(event) {
+        function clearFormValidator(event) {
             var formGroup = getParents(event.target, '.detail');
             if( formGroup.classList.contains('.invalid') ) {
                 formGroup.classList.remove('.invalid');
@@ -96,7 +99,7 @@ function Validate (formSelector) {
         var inputs = formElement.querySelectorAll('[name][rules]');
         var isValid = true;
         for(var input of inputs){
-            if (!handelValidate({ target: input })) {
+            if (!formValidator({ target: input })) {
                 isValid = false;
             }
         }
