@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+.Container {
+    margin: 0 auto;
+}
+
+.Header {
+    width: 98vw;
+    background-position: center center;
+    height: 60vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 10px auto;
+    border-radius: 20px;
+    background-image: url("https://static.vecteezy.com/system/resources/previews/001/370/782/original/black-with-gold-accent-background-free-vector.jpg");
+    /* background: linear-gradient(to right, #000000, #434343); */
+}
+
+img {
+    width: 150px;
+    margin: auto;
+    display: block;
+    border-width: 3px;
+    border-color: white;
+    border-style: solid;
+    border-radius: 10px;
+    opacity: 1;
+
+
+
+}
+
+.Avatar {
+    padding-top: 50px;
+}
+
+.Infor {
+    text-align: center;
+    margin: 10px;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+
+h2,
+h3,
+.box {
+    margin: 10px;
+}
+
+button {
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border-color: white;
+}
+
+.btn_1 {
+    background-color: transparent;
+    transition: 0.5s;
+}
+
+.btn_1:hover {
+    background-color: grey;
+    color: white;
+}
+
+.btn_2 {
+    background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+    border-color: rgba(57, 192, 237, 255);
+}
+
+.btn_2:hover {
+    color: black;
+    background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+    transition: 0.5s;
+}
+
+.Content {
+    margin: 20px auto;
+    width: 98vw;
+    display: flex;
+    justify-content: space-around;
+    -webkit-box-shadow: 6px 4px 34px -1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 6px 4px 34px -1px rgba(0, 0, 0, 0.75);
+    box-shadow: 6px 4px 34px -1px rgba(0, 0, 0, 0.75);
+    border-radius: 20px;
+    background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+}
+
+
+li {
+    margin: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+span.bold {
+    font-weight: bold;
+
+}
+
+.bx {
+    margin: 5px;
+}
+
+ul.Icon {
+    list-style-type: none;
+
+}
+
+.Project {
+    display: flex;
+    justify-content: space-evenly;
+    flex-grow: 7.5;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.Bio {
+    flex-grow: 2;
+    padding-left: 30px;
+}
+
+.Prj {
+    background-color: whitesmoke;
+    width: 30%;
+    border-radius: 20px;
+    padding: 10px;
+    -webkit-box-shadow: 6px 4px 34px -1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 6px 4px 34px -1px rgba(0, 0, 0, 0.75);
+    box-shadow: 6px 4px 34px -1px rgba(0, 0, 0, 0.75);
+    border-radius: 20px;
+}
+
+.My_Project {
+    flex-grow: 0.5;
+}
+
+.prjli {
+    position: relative;
+    left: 15px;
+}
+
+.Prj:hover {
+    background-image: linear-gradient(to top, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+    ;
+    color: #2b3252;
+
+}
+
+.icon {
+    scale: 1.5;
+}
+
+#prjheader1,
+#prjheader2,
+#prjheader3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+@media screen and (max-width: 1024px) {
+    .Avatar {
+        scale: 0.8;
+    }
+
+    .Infor {
+        scale: 0.7;
+        position: relative;
+        bottom: 50px;
+    }
+
+}
+
+@media screen and (max-width: 800px) and (min-width: 450px) {
+    .Project {
+        display: flex;
+        flex-grow: 6;
+        flex-direction: column;
+        margin-top: 10px;
+        margin-bottom: 10px;
+
+    }
+
+    .Prj {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .Bio {
+        flex-grow: 3;
+        padding-left: 30px;
+    }
+
+    .My_Project {
+        flex-grow: 1;
+    }
+}
+
+@media screen and (max-width :450px) {
+    .Project {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .Content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .Prj {
+        width: 90%;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+
+    .Bio {
+        padding-left: 10px;
+    }
+
+    .My_Project {
+        padding-left: 10px;
+    }
+}

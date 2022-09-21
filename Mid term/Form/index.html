@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Điền Thông Tin</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+
+    <div class="Form">
+        <div class="Container">
+            <i class='bx bxs-user-rectangle'></i>
+            <form id="sub" action="../CV/index.html">
+
+                <div class="Input">
+                    <label for="Full_name"> Full name:</label><br>
+
+                    <input type="text" name="Full_name" id="Full_name" class="Full_name_input"
+                        placeholder="Enter your full name"><br>
+                </div>
+                <div class="Input">
+                    <label for="Date_of_birth"> Date of birth</label><br>
+                    <input type="date" name="Date_of_birth" id="Date_of_birth" class="Date_of_birth"
+                        placeholder="Enter your birthday"><br>
+
+                </div>
+                <div class="Input">
+                    <label for="Phone_number"> Phone number:</label><br>
+                    <input type="tel" name="Phone_number" id="Phone_number" class="Phone_number_input"
+                        placeholder="Enter your phone number"><br>
+                </div>
+                <div class="Input">
+                    <label for="Email"> Email: </label><br>
+                    <input type="email" name="Email" id="Email" class="Email_input" placeholder="Enter your email"><br>
+                </div>
+                <div class="Input">
+                    <label for="Address"> Address: </label><br>
+                    <input type="text" name="Address" id="Address" class="Address_input"
+                        placeholder="Enter your address"><br>
+                </div>
+                <!-- <div class="Input">
+                    <label for="Picture"> Picture: </label><br>
+                    <input type="file" name="Picture" id="Picture" 
+                        placeholder="Upload your Picture"><br>
+                </div> -->
+                <button type="submit" onclick="validate()" id="btn">
+                    Submit
+                </button>
+            </form>
+        </div>
+
+    </div>
+
+    <script src="./import.js"></script>
+</body>
+
+</html>
