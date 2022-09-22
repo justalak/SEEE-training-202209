@@ -12,7 +12,6 @@ function Validate (formSelector) {
         }
     }
 
-    // defind rules
     var validateRules = {
         required: function (value) {
             return value ? undefined : 'Please fill in';
@@ -68,7 +67,7 @@ function Validate (formSelector) {
                 var formGroup = getParents(event.target, '.detail');
                 if( formGroup ) {
                     formGroup.classList.add('.invalid');
-                    var formMessage = formGroup.querySelector('.mess');
+                    var formMessage = formGroup.querySelector('.report');
                     if( formMessage ){
                         formMessage.innerText = errorMessage;
                     }
@@ -81,7 +80,7 @@ function Validate (formSelector) {
             var formGroup = getParents(event.target, '.detail');
             if( formGroup.classList.contains('.invalid') ) {
                 formGroup.classList.remove('.invalid');
-                var formMessage = formGroup.querySelector('.mess'); 
+                var formMessage = formGroup.querySelector('.report'); 
                 if( formMessage ){
                     formMessage.innerText = '';
                 }
@@ -91,30 +90,30 @@ function Validate (formSelector) {
 
     var _this = this;
 
-    // formElement.onsubmit = function (event) {
-    //     event.preventDefault();
-    //     var inputs = formElement.querySelectorAll('[name][rules]');
-    //     var isValid = true;
-    //     for(var input of inputs){
-    //         if (!handelValidate({ target: input })) {
-    //             isValid = false;
-    //         }
-    //     }
-    //     if(isValid){            
-    //         if(typeof _this.onSubmit === 'function'){
-    //             var enableInput = formElement.querySelectorAll('[name][rules]');
-    //             var formValues = Array.from(enableInput).reduce( function (values, input) {
-    //                 switch( input.type ) {
-    //                     default:
-    //                         values[input.name] = input.value;
-    //                 }
-    //                 return values;
-    //             }, {} );
-    //             _this.onSubmit(formValues);
-    //             formElement.submit();
-    //         }else{
-    //             formElement.submit();
-    //         }
-    //     }
-    // }
+    formElement.onsubmit = function (event) {
+        event.preventDefault();
+        var inputs = formElement.querySelectorAll('[name][rules]');
+        var isValid = true;
+        for(var input of inputs){
+            if (!handelValidate({ target: input })) {
+                isValid = false;
+            }
+        }
+        if(isValid){            
+            if(typeof _this.onSubmit === 'function'){
+                var enableInput = formElement.querySelectorAll('[name][rules]');
+                var formValues = Array.from(enableInput).reduce( function (values, input) {
+                    switch( input.type ) {
+                        default:
+                            values[input.name] = input.value;
+                    }
+                    return values;
+                }, {} );
+                _this.onSubmit(formValues);
+                formElement.submit();
+            }else{
+                formElement.submit();
+            }
+        }
+    }
 }
