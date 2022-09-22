@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="img/mu.jpg">
+    <link rel="stylesheet" href="css/form.css">
+    <title>Personal Form</title>
+</head>
+<body>
+
+    <div class="center">
+        <h3>Your Infomation</h3>
+        <form action="index.html" method="get" id="form">
+            <div class="detail">
+                <input class="input" id="name" name="name" rules="required" type="text" placeholder=" ">
+                <label class="label">Name</label>
+                <span class="report"></span>
+            </div>
+
+            <div class="detail">
+                <input class="input" id="job" name="job" rules="required" type="text" placeholder=" ">
+                <label class="label">Job</label>
+                <span class="report"></span>
+            </div>
+
+            <div class="detail">
+                <input class="input" id="phone" name="phone" rules="required" type="number" placeholder=" ">
+                <label class="label">Phone Number</label>
+                <span class="report"></span>
+            </div>
+          
+            <div class="detail">
+                <input class="input" id="email" name="email" rules="required|email" type="email" placeholder=" ">
+                <label class="label">Email</label>
+                <span class="report"></span>
+            </div>
+
+
+            <div class="detail">
+                <input class="input" id="address" name="address" rules="required" type="text" placeholder=" ">
+                <label class="label">Address</label>
+                <span class="report"></span>
+            </div>
+
+            <div class="detail">
+                <input class="input" id="address" name="summary" rules="required" type="text" placeholder=" ">
+                <label class="label">Summary</label>
+                <span class="report"></span>
+            </div>
+           
+            
+            <div class="button">
+                <button>Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="js/Validate.js"></script>
+    <script>
+        var form = new Validate('#form');
+        form.onSubmit = function (data) {
+            // console.log(data);
+            sessionStorage.setItem("name", data.name);
+            sessionStorage.setItem("job", data.job);
+            sessionStorage.setItem("phone", data.phone);
+            sessionStorage.setItem("email", data.email);
+            sessionStorage.setItem("address", data.address);
+            sessionStorage.setItem("summary", data.summary);
+        }
+    </script>
+</body>
+</html>
