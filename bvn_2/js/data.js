@@ -21,4 +21,3 @@ function titleCase(string) {
     }
     return sentence.join(" ");
 }
-
