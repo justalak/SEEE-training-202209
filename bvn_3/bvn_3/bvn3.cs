@@ -11,7 +11,7 @@ namespace bvn_3
         static void Main(string[] args)
         {
             StudentManager listSt = new StudentManager();
-            string text = File.ReadAllText("datast.json");
+            string text = File.ReadAllText("../../dataStudent.json");
             listSt = JsonConvert.DeserializeObject<StudentManager>(text);
 
             Menu(listSt);
