@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace bvn_3
+namespace bvn_3.School
 {
     [Serializable]
-    public class SchoolObj
+    public abstract class SchoolObj
     {
-        public SchoolObj() { }
         public int Id { get; set; }
         public string Name { get; set; }
+        public abstract void Show();
     }
 }

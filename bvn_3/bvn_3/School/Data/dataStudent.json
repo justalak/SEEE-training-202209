@@ -13,7 +13,7 @@
       "Gender": "female",
       "Email": "kannan@icloud.com",
       "PhoneNumber": "0222222222",
-      "Score": 20,
+      "Score": 2,
       "ClassId": 2,
       "Id": 2,
       "Name": "Sasha Gould"
@@ -22,7 +22,7 @@
       "Gender": "male",
       "Email": "jbarta@mac.com",
       "PhoneNumber": "0333333333",
-      "Score": 30,
+      "Score": 3,
       "ClassId": 3,
       "Id": 3,
       "Name": "Azul Kelley"
@@ -31,7 +31,7 @@
       "Gender": "male",
       "Email": "willg@live.com",
       "PhoneNumber": "0444444444",
-      "Score": 40,
+      "Score": 4,
       "ClassId": 2,
       "Id": 4,
       "Name": "Yasmine Page"
@@ -40,7 +40,7 @@
       "Gender": "female",
       "Email": "lamprecht@gmail.com",
       "PhoneNumber": "0555555555",
-      "Score": 50,
+      "Score": 5,
       "ClassId": 3,
       "Id": 5,
       "Name": "Kellen Peterson"
@@ -49,7 +49,7 @@
       "Gender": "female",
       "Email": "miyop@comcast.net",
       "PhoneNumber": "0666666666",
-      "Score": 60,
+      "Score": 6,
       "ClassId": 3,
       "Id": 6,
       "Name": "Gisselle Mejia"
@@ -58,7 +58,7 @@
       "Gender": "male",
       "Email": "earmstro@att.net",
       "PhoneNumber": "0777777777",
-      "Score": 70,
+      "Score": 7,
       "ClassId": 2,
       "Id": 7,
       "Name": "Darius Wells"
@@ -67,7 +67,7 @@
       "Gender": "female",
       "Email": "presoff@yahoo.com",
       "PhoneNumber": "0888888888",
-      "Score": 80,
+      "Score": 8,
       "ClassId": 1,
       "Id": 8,
       "Name": "Lucy Underwood"
@@ -76,7 +76,7 @@
       "Gender": "male",
       "Email": "skythe@aol.com",
       "PhoneNumber": "0999999999",
-      "Score": 90,
+      "Score": 9,
       "ClassId": 1,
       "Id": 9,
       "Name": "Wade Santos"
@@ -94,7 +94,7 @@
       "Gender": "female",
       "Email": "hllam@live.com",
       "PhoneNumber": "0322222222",
-      "Score": 15,
+      "Score": 1,
       "ClassId": 1,
       "Id": 11,
       "Name": "Carsen Lin"
@@ -103,7 +103,7 @@
       "Gender": "male",
       "Email": "mastinfo@hotmail.com",
       "PhoneNumber": "0433333333",
-      "Score": 25,
+      "Score": 2,
       "ClassId": 1,
       "Id": 12,
       "Name": "Davin Atkinson"
@@ -112,7 +112,7 @@
       "Gender": "female",
       "Email": "nichoj@sbcglobal.net",
       "PhoneNumber": "0544444444",
-      "Score": 35,
+      "Score": 3,
       "ClassId": 3,
       "Id": 13,
       "Name": "Evie Fisher"
@@ -121,7 +121,7 @@
       "Gender": "male",
       "Email": "thurston@live.com",
       "PhoneNumber": "0655555555",
-      "Score": 45,
+      "Score": 4,
       "ClassId": 2,
       "Id": 14,
       "Name": "Ishaan Steele"
@@ -130,7 +130,7 @@
       "Gender": "female",
       "Email": "akoblin@optonline.net",
       "PhoneNumber": "0766666666",
-      "Score": 55,
+      "Score": 5,
       "ClassId": 1,
       "Id": 15,
       "Name": "Iliana Archer"
@@ -139,7 +139,7 @@
       "Gender": "male",
       "Email": "raines@verizon.net",
       "PhoneNumber": "0877777777",
-      "Score": 65,
+      "Score": 6,
       "ClassId": 3,
       "Id": 16,
       "Name": "Kaliyah Logan"
@@ -148,7 +148,7 @@
       "Gender": "female",
       "Email": "oracle@mac.com",
       "PhoneNumber": "0877777777",
-      "Score": 75,
+      "Score": 7,
       "ClassId": 2,
       "Id": 17,
       "Name": "Mylie Barr"
@@ -157,7 +157,7 @@
       "Gender": "female",
       "Email": "miyop@comcast.net",
       "PhoneNumber": "0988888888",
-      "Score": 85,
+      "Score": 8,
       "ClassId": 1,
       "Id": 18,
       "Name": "Pranav Spence"
@@ -166,7 +166,7 @@
       "Gender": "male",
       "Email": "duncand@icloud.com",
       "PhoneNumber": "0099999999",
-      "Score": 95,
+      "Score": 9,
       "ClassId": 3,
       "Id": 19,
       "Name": "Lucy Underwood"
@@ -175,7 +175,7 @@
       "Gender": "male",
       "Email": "parsimony@outlook.com",
       "PhoneNumber": "0112222222",
-      "Score": 25,
+      "Score": 2,
       "ClassId": 1,
       "Id": 20,
       "Name": "Devan Gilbert"

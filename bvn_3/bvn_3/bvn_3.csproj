@@ -47,18 +47,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="bvn3.cs" />
-    <Compile Include="Class.cs" />
-    <Compile Include="ClassManager.cs" />
+    <Compile Include="School\MenuAction.cs" />
+    <Compile Include="School\Manager\ObjManager.cs" />
+    <Compile Include="School\Object\Class.cs" />
+    <Compile Include="School\Manager\ClassManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SchoolObj.cs" />
-    <Compile Include="Student.cs" />
-    <Compile Include="StudentManager.cs" />
-    <Compile Include="Teacher.cs" />
-    <Compile Include="TeacherManager.cs" />
+    <Compile Include="School\Object\SchoolObj.cs" />
+    <Compile Include="School\Object\Student.cs" />
+    <Compile Include="School\Manager\StudentManager.cs" />
+    <Compile Include="School\Object\Teacher.cs" />
+    <Compile Include="School\Manager\TeacherManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="dataStudent.json" />
+    <None Include="School\backupData\dataClass.json" />
+    <None Include="School\backupData\dataStudent.json" />
+    <None Include="School\backupData\dataTeacher.json" />
+    <None Include="School\Data\dataClass.json" />
+    <None Include="School\Data\dataStudent.json" />
+    <None Include="School\Data\dataTeacher.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
