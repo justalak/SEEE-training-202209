@@ -1,0 +1,52 @@
+[
+  {
+    "TeacherId": 1,
+    "Name": "Cau truc du lieu va giai thuat",
+    "Id": 1
+  },
+  {
+    "TeacherId": 2,
+    "Name": "He thong vien thong",
+    "Id": 2
+  },
+  {
+    "TeacherId": 1,
+    "Name": "Cau truc du lieu va giai thuat",
+    "Id": 3
+  },
+  {
+    "TeacherId": 3,
+    "Name": "Ly thuyet thong tin",
+    "Id": 4
+  },
+  {
+    "TeacherId": 2,
+    "Name": "Dien tu tuong tu 1",
+    "Id": 5
+  },
+  {
+    "TeacherId": 5,
+    "Name": "Dien Tu so",
+    "Id": 6
+  },
+  {
+    "TeacherId": 4,
+    "Name": "Thong tin so",
+    "Id": 7
+  },
+  {
+    "TeacherId": 1,
+    "Name": "Ki thuat phan mem",
+    "Id": 8
+  },
+  {
+    "TeacherId": 2,
+    "Name": "Dien tu tuong tu 2",
+    "Id": 9
+  },
+  {
+    "TeacherId": 5,
+    "Name": "Ki thuat vi xu ly ",
+    "Id": 10
+  }
+]

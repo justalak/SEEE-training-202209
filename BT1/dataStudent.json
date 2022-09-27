@@ -1,0 +1,92 @@
+[
+  {
+    "Gender": "Male",
+    "Email": "tuyen.tq",
+    "PhoneNumber": "0123796418",
+    "Score": 9,
+    "ClassId": 1,
+    "Name": "Trinh Quang Tuyen",
+    "Id": 1
+  },
+  {
+    "Gender": "Female",
+    "Email": "long.pt",
+    "PhoneNumber": "0812387218",
+    "Score": 7,
+    "ClassId": 2,
+    "Name": "Pham Thanh Long",
+    "Id": 2
+  },
+  {
+    "Gender": "Female",
+    "Email": "thanh.dtp",
+    "PhoneNumber": "01293612373",
+    "Score": 8,
+    "ClassId": 1,
+    "Name": "Do Thi Phuong Thanh",
+    "Id": 3
+  },
+  {
+    "Gender": "Male",
+    "Email": "han.nv",
+    "PhoneNumber": "0832764812768",
+    "Score": 5,
+    "ClassId": 3,
+    "Name": "Nguyen Van han",
+    "Id": 4
+  },
+  {
+    "Gender": "Female",
+    "Email": "nghiep.nv",
+    "PhoneNumber": "012324897",
+    "Score": 7,
+    "ClassId": 4,
+    "Name": "Nguyen Van Nghiep",
+    "Id": 5
+  },
+  {
+    "Gender": "Male",
+    "Email": "quan.nv",
+    "PhoneNumber": "091273921",
+    "Score": 8,
+    "ClassId": 3,
+    "Name": "Nguyen Anh Quan",
+    "Id": 6
+  },
+  {
+    "Gender": "Female",
+    "Email": "an.nt",
+    "PhoneNumber": "012372873123",
+    "Score": 5,
+    "ClassId": 4,
+    "Name": "Nguyen Thuy An",
+    "Id": 7
+  },
+  {
+    "Gender": "van.pk",
+    "Email": "Female",
+    "PhoneNumber": "1",
+    "Score": 1,
+    "ClassId": 1,
+    "Name": "Pham Kieu Van",
+    "Id": 8
+  },
+  {
+    "Gender": "Male",
+    "Email": "tung.ct",
+    "PhoneNumber": "0123921472",
+    "Score": 2,
+    "ClassId": 4,
+    "Name": "Chu Thanh Tung",
+    "Id": 9
+  },
+  {
+    "Gender": "male",
+    "Email": "chuyen.hv",
+    "PhoneNumber": "8",
+    "Score": 8,
+    "ClassId": 2,
+    "Name": "Hoang Van Chuyen",
+    "Id": 10
+  }
+]

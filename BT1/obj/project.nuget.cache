@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "RfMIZfdjumvBiNwh5+qIX60jh5CYDT+dSH+nIQrxGHMviJwFZN167X2pkcQJ+PqLY9gzis9qCnEZ9I79O/Wf4A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\HP\\Desktop\\Back-end C#\\BT1\\BT1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\HP\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

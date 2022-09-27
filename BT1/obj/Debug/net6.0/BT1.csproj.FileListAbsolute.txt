@@ -1,0 +1,17 @@
+C:\Users\HP\Desktop\Back-end C#\BT1\obj\Debug\net6.0\BT1.csproj.AssemblyReference.cache
+C:\Users\HP\Desktop\Back-end C#\BT1\obj\Debug\net6.0\BT1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\Desktop\Back-end C#\BT1\obj\Debug\net6.0\BT1.AssemblyInfoInputs.cache
+C:\Users\HP\Desktop\Back-end C#\BT1\obj\Debug\net6.0\BT1.AssemblyInfo.cs
+C:\Users\HP\Desktop\Back-end C#\BT1\obj\Debug\net6.0\BT1.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\Back-end C#\BT1\bin\Debug\net6.0\BT1.exe
+C:\Users\HP\Desktop\Back-end C#\BT1\bin\Debug\net6.0\BT1.deps.json
+C:\Users\HP\Desktop\Back-end C#\BT1\bin\Debug\net6.0\BT1.runtimeconfig.json
+C:\Users\HP\Desktop\Back-end C#\BT1\bin\Debug\net6.0\BT1.dll
+C:\Users\HP\Desktop\Back-end C#\BT1\bin\Debug\net6.0\BT1.pdb
+C:\Users\HP\Desktop\Back-end C#\BT1\obj\Debug\net6.0\BT1.dll
+C:\Users\HP\Desktop\Back-end C#\BT1\obj\Debug\net6.0\refint\BT1.dll
+C:\Users\HP\Desktop\Back-end C#\BT1\obj\Debug\net6.0\BT1.pdb
+C:\Users\HP\Desktop\Back-end C#\BT1\obj\Debug\net6.0\BT1.genruntimeconfig.cache
+C:\Users\HP\Desktop\Back-end C#\BT1\obj\Debug\net6.0\ref\BT1.dll
+C:\Users\HP\Desktop\Back-end C#\BT1\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\HP\Desktop\Back-end C#\BT1\obj\Debug\net6.0\BT1.csproj.CopyComplete
