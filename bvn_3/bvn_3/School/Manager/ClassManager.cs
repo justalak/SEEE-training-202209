@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace bvn_3.School.Manager
 {
@@ -9,9 +11,13 @@ namespace bvn_3.School.Manager
         public List<Class> listClass = null;
         public ClassManager()
         {
-            listClass = new List<Class>();
+            listClass = JsonConvert.DeserializeObject<List<Class>>(File.ReadAllText("../../School/Data/dataClass.json"));
+            if (listClass == null || listClass.Count == 0)
+            {
+                Logger.WriteLog("\tFalsed to load class data");
+            }
         }
-        private int AutoId()
+        public int AutoId()
         {
             int maxId = 1;
             if (listClass.Count > 0 && listClass != null)
@@ -47,11 +53,23 @@ namespace bvn_3.School.Manager
                 {
                     Console.WriteLine("{0, -5} {1, -10} {2, -8}", cl.Id, cl.Name, cl.TeacherId);
                 }
-                Console.WriteLine();
+                Console.WriteLine(); Logger.WriteLog("\tShown list of classes");
+            }
+            else
+            {
+                Logger.WriteLog("\tCan not show list of classes");
             }
         }
-        public override void DeleteData(int id)
+        public override void DeleteData()
         {
+            Console.Write("Delete at id: ");
+            string s = Console.ReadLine();
+            while (string.IsNullOrEmpty(s) || !IsDigital(s))
+            {
+                Console.Write("Wrong input, please input again: ");
+                s = Console.ReadLine();
+            }
+            int id = Convert.ToInt32(s);
             if (listClass != null && listClass.Count > 0)
             {
                 int delete = FindById(id, false);
@@ -59,31 +77,34 @@ namespace bvn_3.School.Manager
                 {
                     listClass.RemoveAt(delete);
                     Console.WriteLine("Deleted Class with id = " + id + "\n");
+                    Logger.WriteLog("\tDeleted at id = " + s);
                 }
                 else
                 {
                     Console.WriteLine("There is not Class with id = " + id + "\n");
+                    Logger.WriteLog("\tCan not delete at id = " + s);
                 }
             }
             else
             {
                 Console.WriteLine("There is no Class to delete\n");
+                Logger.WriteLog("\tCan not delete at id = " + s);
             }
         }
         public override void AddData()
         {
+            Console.WriteLine("Add:");
             Class cl = new Class();
-
             cl.Id = AutoId();
-
             Console.Write("Input name: "); string s = Console.ReadLine();
-            NameInput(ref s);
+            do
+            {
+                NameInput(ref s);
+            } while (!BeUnique(s));
             cl.Name = s;
-
             Console.Write("Input teacherId: "); s = Console.ReadLine();
             TeacherIdInput(ref s);
             cl.TeacherId = Convert.ToInt32(s);
-
             listClass.Add(cl);
         }
         public override int FindById(int id, bool show)
@@ -100,9 +121,14 @@ namespace bvn_3.School.Manager
                         {
                             Console.WriteLine("{0, -5} {1, -10} {2, -8}", "ID", "Name", "TeacherId");
                             Console.WriteLine("{0, -5} {1, -10} {2, -8}", listClass[i].Id, listClass[i].Name, listClass[i].TeacherId);
+                            Logger.WriteLog("\tSearched");
                         }
                     }
                 }
+            }
+            if (show && position == -1)
+            {
+                Logger.WriteLog("\tCan not search");
             }
             return position;
         }
@@ -111,10 +137,6 @@ namespace bvn_3.School.Manager
             List<int> position = new List<int>();
             if (listClass != null && listClass.Count > 0)
             {
-                if (show)
-                {
-                    Console.WriteLine("{0, -5} {1, -10} {2, -8}", "ID", "Name", "TeacherId");
-                }
                 for (int i = 0; i < listClass.Count; i++)
                 {
                     if (String.Compare(listClass[i].Name, name, true) == 0)
@@ -122,47 +144,96 @@ namespace bvn_3.School.Manager
                         position.Add(i);
                         if (show)
                         {
+                            Console.WriteLine("{0, -5} {1, -10} {2, -8}", "ID", "Name", "TeacherId");
                             Console.WriteLine("{0, -5} {1, -10} {2, -8}", listClass[i].Id, listClass[i].Name, listClass[i].TeacherId);
                         }
                     }
                 }
             }
+            if (show && position.Count > 0)
+            {
+                Logger.WriteLog("\tSearched");
+            }
+            else if (show && position.Count == 0)
+            {
+                Logger.WriteLog("\tCan not search");
+            }
             return position;
         }
-        public override void UpdateData(int id)
+        public override void UpdateData()
         {
+            Console.Write("Update at id: ");
+            string s = Console.ReadLine();
+            while (string.IsNullOrEmpty(s) || !IsDigital(s))
+            {
+                Console.Write("Wrong input, please input again: ");
+                s = Console.ReadLine();
+            }
+            int id = Convert.ToInt32(s);
             int update = FindById(id, false);
             if (update != -1)
             {
-                Console.Write("Input name: "); string s = Console.ReadLine();
+                Console.Write("Input name: "); s = Console.ReadLine();
                 NameInput(ref s);
                 listClass[update].Name = s;
-
                 Console.Write("Input teacherId: "); s = Console.ReadLine();
                 TeacherIdInput(ref s);
                 listClass[update].TeacherId = Convert.ToInt32(s);
+                Logger.WriteLog("\tUpdated at id = " + s);
             }
             else
             {
                 Console.WriteLine("There is not Class with id = " + id);
+                Logger.WriteLog("\tCan not update at id = " + s);
             }
         }
-        public override void GoBack()
+        public override void CloseFile()
         {
-            //throw new NotImplementedException();
+            if (listClass != null && listClass.Count > 0)
+            {
+                string data = JsonConvert.SerializeObject(listClass);
+                System.IO.File.WriteAllText("../../School/Data/dataClass.json", data);
+            }
         }
         private void TeacherIdInput(ref string s)
         {
-            while (!IsLimitNumber(s, 20))
+            while (string.IsNullOrEmpty(s) || !IsLimitNumber(s, 50) || !GetTeacherId().Contains(Convert.ToInt32(s)))
             {
+                if (!GetClassId().Contains(Convert.ToInt32(s)))
+                    Console.WriteLine("No have teacher id = " + s);
                 Console.Write("Please input valid teacherId or type 'quit': ");
                 s = Console.ReadLine();
             }
         }
-        public void Add(Class cl)
+        private bool BeUnique(string name)
         {
-            listClass.Add(cl);
+            foreach (Class cl in listClass)
+            {
+                if (String.Compare(cl.Name, name, true) == 0)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
-
+        public List<int> FindClassSameTeacher(int id)
+        {
+            List<int> idCL = new List<int>();
+            if (listClass != null && listClass.Count > 0)
+            {
+                foreach (Class cl in listClass)
+                {
+                    if (cl.TeacherId == id)
+                    {
+                        idCL.Add(cl.Id);
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine("No data!");
+            }
+            return idCL;
+        }
     }
 }

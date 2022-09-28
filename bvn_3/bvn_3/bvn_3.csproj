@@ -37,6 +37,7 @@
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -47,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="bvn3.cs" />
+    <Compile Include="School\Logger.cs" />
     <Compile Include="School\MenuAction.cs" />
     <Compile Include="School\Manager\ObjManager.cs" />
     <Compile Include="School\Object\Class.cs" />
@@ -67,6 +69,9 @@
     <None Include="School\Data\dataStudent.json" />
     <None Include="School\Data\dataTeacher.json" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="log.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

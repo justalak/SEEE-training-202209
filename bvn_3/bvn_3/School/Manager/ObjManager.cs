@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text.RegularExpressions;
 
 namespace bvn_3.School.Manager
@@ -8,13 +10,13 @@ namespace bvn_3.School.Manager
     public abstract class ObjManager
     {
         public abstract void MenuChoose();
+        public abstract void DeleteData();
         public abstract void ShowData();
-        public abstract void DeleteData(int id);
         public abstract void AddData();
         public abstract int FindById(int id, bool show);
         public abstract List<int> FindByName(string name, bool show);
-        public abstract void UpdateData(int id);
-        public abstract void GoBack();
+        public abstract void UpdateData();
+        public abstract void CloseFile();
 
         //check
         protected bool IsName(string name)
@@ -24,7 +26,7 @@ namespace bvn_3.School.Manager
         }
         protected void NameInput(ref string s)
         {
-            while (!IsName(s))
+            while (string.IsNullOrEmpty(s) || !IsName(s))
             {
                 Console.Write("Please input valid name or type 'quit': ");
                 s = Console.ReadLine();
@@ -74,6 +76,55 @@ namespace bvn_3.School.Manager
                 }
             }
             return true;
+        }
+        protected string SearchByNameOrId(ref string search)
+        {
+            bool check = true;
+            do
+            {
+                search = Console.ReadLine().ToLower();
+                if (string.IsNullOrEmpty(search))
+                {
+                    Console.Write("Wrong, please input again: ");
+                }
+                else if (IsDigital(search))
+                {
+                    check = false;
+                    return "id";
+                }
+                else if (IsName(search))
+                {
+                    check = false;
+                    return "name";
+                }
+                else
+                {
+                    Console.Write("Wrong, please input again: ");
+                }
+            } while (check);
+            return "wrong";
+        }
+        protected List<int> GetTeacherId()
+        {
+            List<Teacher> listTeacher = JsonConvert.DeserializeObject<List<Teacher>>(File.ReadAllText("../../School/Data/dataTeacher.json"));
+            List<int> result = new List<int>();
+            result.Add(0);
+            foreach (Teacher tc in listTeacher)
+            {
+                result.Add(tc.Id);
+            }
+            return result;
+        }
+        protected List<int> GetClassId()
+        {
+            List<Class> listClass = JsonConvert.DeserializeObject<List<Class>>(File.ReadAllText("../../School/Data/dataClass.json"));
+            List<int> result = new List<int>();
+            result.Add(0);
+            foreach (Class cl in listClass)
+            {
+                result.Add(cl.Id);
+            }
+            return result;
         }
     }
 }
