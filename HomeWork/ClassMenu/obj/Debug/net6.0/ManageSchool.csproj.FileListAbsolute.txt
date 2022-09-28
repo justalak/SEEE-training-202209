@@ -1,0 +1,15 @@
+D:\Training Avepoint\SEEE-training-202209\HomeWork\ClassMenu\obj\Debug\net6.0\ManageSchool.csproj.AssemblyReference.cache
+D:\Training Avepoint\SEEE-training-202209\HomeWork\ClassMenu\obj\Debug\net6.0\ManageSchool.GeneratedMSBuildEditorConfig.editorconfig
+D:\Training Avepoint\SEEE-training-202209\HomeWork\ClassMenu\obj\Debug\net6.0\ManageSchool.AssemblyInfoInputs.cache
+D:\Training Avepoint\SEEE-training-202209\HomeWork\ClassMenu\obj\Debug\net6.0\ManageSchool.AssemblyInfo.cs
+D:\Training Avepoint\SEEE-training-202209\HomeWork\ClassMenu\obj\Debug\net6.0\ManageSchool.csproj.CoreCompileInputs.cache
+D:\Training Avepoint\SEEE-training-202209\HomeWork\ClassMenu\bin\Debug\net6.0\ManageSchool.exe
+D:\Training Avepoint\SEEE-training-202209\HomeWork\ClassMenu\bin\Debug\net6.0\ManageSchool.deps.json
+D:\Training Avepoint\SEEE-training-202209\HomeWork\ClassMenu\bin\Debug\net6.0\ManageSchool.runtimeconfig.json
+D:\Training Avepoint\SEEE-training-202209\HomeWork\ClassMenu\bin\Debug\net6.0\ManageSchool.dll
+D:\Training Avepoint\SEEE-training-202209\HomeWork\ClassMenu\bin\Debug\net6.0\ManageSchool.pdb
+D:\Training Avepoint\SEEE-training-202209\HomeWork\ClassMenu\obj\Debug\net6.0\ManageSchool.dll
+D:\Training Avepoint\SEEE-training-202209\HomeWork\ClassMenu\obj\Debug\net6.0\refint\ManageSchool.dll
+D:\Training Avepoint\SEEE-training-202209\HomeWork\ClassMenu\obj\Debug\net6.0\ManageSchool.pdb
+D:\Training Avepoint\SEEE-training-202209\HomeWork\ClassMenu\obj\Debug\net6.0\ManageSchool.genruntimeconfig.cache
+D:\Training Avepoint\SEEE-training-202209\HomeWork\ClassMenu\obj\Debug\net6.0\ref\ManageSchool.dll
