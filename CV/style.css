@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+.Header {
+    width: 98vw;
+    background-position: center center;
+    height: 60vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 10px auto;
+    border-radius: 20px;
+    background-image: url("https://static.vecteezy.com/system/resources/previews/001/370/782/original/black-with-gold-accent-background-free-vector.jpg");
+}
+
+img {
+    width: 100px;
+    margin: auto;
+    display: block;
+    border-width: 3px;
+    border-color: white;
+    border-style: solid;
+    border-radius: 10px;
+    opacity: 1;
+
+
+
+}
+
+.Avatar {
+    padding-top: 50px;
+}
+
+.Infor {
+    text-align: center;
+    margin: 10px;
+    color: white
+}
+
+
+h2,
+h3,
+.box {
+    margin: 10px;
+}
+
+button {
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border-color: white;
+}
+
+.btn_1 {
+    background-color: transparent;
+}
+
+.btn_2 {
+    background-color: rgba(57, 192, 237, 255);
+    border-color: rgba(57, 192, 237, 255);
+}
+
+.btn_2:hover {
+    color: rgb(247, 25, 25);
+    background-color: yellow;
+
+}
+
+.Content {
+    margin: 20px auto;
+    width: 98vw;
+    display: flex;
+    justify-content: space-around;
+    -webkit-box-shadow: 6px 4px 34px -1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 6px 4px 34px -1px rgba(0, 0, 0, 0.75);
+    box-shadow: 6px 4px 34px -1px rgba(0, 0, 0, 0.75);
+    border-radius: 20px;
+}
+
+
+li {
+    margin: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+span {
+    font-weight: bold;
+
+}
+
+.bx {
+    margin: 5px;
+}
+
+ul.Icon {
+    list-style-type: none;
+
+}
+
+.Project {
+    display: flex;
+    justify-content: space-evenly;
+    flex-grow: 8;
+}
+
+.Bio {
+    flex-grow: 2;
+    padding-left: 50px;
+}
+
+.Prj {
+    background-color: whitesmoke;
+    width: 30%;
+    border-radius: 20px;
+    padding: 10px;
+    -webkit-box-shadow: 6px 4px 34px -1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 6px 4px 34px -1px rgba(0, 0, 0, 0.75);
+    box-shadow: 6px 4px 34px -1px rgba(0, 0, 0, 0.75);
+    border-radius: 20px;
+}
+
+.prjli {
+    position: relative;
+    left: 15px;
+}
+
+.Prj:hover {
+    background-color: rgb(240, 217, 10);
+    color: rgb(247, 25, 25);
+
+}

@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.Form {
+    background-color: rgba(221, 229, 244, 255);
+    width: 100vw;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.Container {
+    display: block;
+    margin: auto;
+    margin-bottom: 50px;
+
+    background-color: rgba(241, 247, 254, 255);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    width: 50%;
+    -webkit-box-shadow: 0px 3px 25px -10px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0px 3px 25px -10px rgba(0, 0, 0, 1);
+    box-shadow: 0px 3px 25px -10px rgba(0, 0, 0, 1);
+}
+
+button {
+    width: 20%;
+    background-color: rgba(62, 70, 132, 255);
+    border-radius: 30px;
+    border-width: 0;
+    padding: 10px;
+    cursor: pointer;
+    color: white;
+}
+
+button:hover {
+    background-color: #000066;
+}
+
+.Input {
+    background-color: rgba(255, 255, 255, 255);
+    width: 30%;
+    margin: auto;
+    border-radius: 10px;
+    text-align: left;
+    padding: 5px;
+    margin: 20px auto;
+    -webkit-box-shadow: 5px -4px 11px -9px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 5px -4px 11px -9px rgba(0, 0, 0, 1);
+    box-shadow: 5px -4px 11px -9px rgba(0, 0, 0, 1);
+}
+
+input {
+    border-width: 0;
+    padding: 5px;
+    width: 100%;
+}
+
+.bx {
+    transform: scale(5);
+    margin: 20px;
+    color: rgba(62, 70, 132, 255);
+}
+
+@media screen and (max-width : 800px) and (min-width: 450px) {
+    .Input {
+        width: 80%;
+    }
+
+}
+
+@media screen and (max-width: 450px) {
+    .Container {
+        width: 95%;
+    }
+
+    .Input {
+        width: 90%;
+    }
+
+}
