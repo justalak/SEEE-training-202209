@@ -122,7 +122,7 @@ ORDER BY Class;
 
 CREATE VIEW Teacher_class AS
 SELECT TEACHER.Teacher_Id,FullName, Class_Id,Class
-FROM Teacher
+FROM TEACHER
 RIGHT JOIN CLASS
 ON CLASS.Teacher_Id=TEACHER.Teacher_Id
 WHERE CLASS.Teacher_Id is NOT NULL
