@@ -58,14 +58,12 @@ order by Count(Class.idClass) desc
 
 
 
--- Giáo viên chủ nhiệm lướp nhiều nhất --
-select top 1 Teacher.nameTc, Count(Class.idClass)
+-- Sap xep giáo viên chủ nhiệm lớp nhiều nhất --
+select Teacher.nameTc, Count(Class.idClass)
 from Teacher, Class
 where Teacher.idTeacher = Class.idTeacher
 group by Teacher.nameTc
 order by Count(Class.idClass) desc
-
-
 
 
 -- 10 giáo viên có lớp có điểm trung bình cao nhất --
