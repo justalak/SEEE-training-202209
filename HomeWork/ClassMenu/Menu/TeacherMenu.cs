@@ -12,7 +12,7 @@ namespace ManageSchool.Menu
         public List<Teacher> listTeacher = null;
         public TeacherMenu()
         {
-            var dataTeacher = File.ReadAllText(@"Teacher.json");
+            var dataTeacher = File.ReadAllText(@"../../Menu/Teacher.json");
             listTeacher = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Teacher>>(dataTeacher);
         }
         private int CreateID()
@@ -116,7 +116,7 @@ namespace ManageSchool.Menu
         {
             foreach (Teacher teacher in listTeacher)
             {
-                using (Stream stream = File.Open(@"Teacher.json", FileMode.Create))
+                using (Stream stream = File.Open(@"../../Menu/Teacher.json", FileMode.Create))
                 {
                     var binaryFormatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
                     binaryFormatter.Serialize(stream, teacher);

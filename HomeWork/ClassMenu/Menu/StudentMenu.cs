@@ -14,7 +14,7 @@ namespace ManageSchool.Menu
         public List<StudentClass> listStudent = null;
         public StudentMenu()
         {
-            var dataStudent = File.ReadAllText(@"Student.json");
+            var dataStudent = File.ReadAllText(@"../../Menu/Student.json");
             listStudent = JsonConvert.DeserializeObject<List<StudentClass>>(dataStudent);
         }
         private int CreateID()
@@ -162,7 +162,7 @@ namespace ManageSchool.Menu
         {
             foreach(StudentClass studentClass in listStudent)
             {
-                using (Stream stream = File.Open(@"Student.json", FileMode.Create))
+                using (Stream stream = File.Open(@"../../Menu/Student.json", FileMode.Create))
                 {
                     var binaryFormatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
                     binaryFormatter.Serialize(stream, studentClass);
