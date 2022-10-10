@@ -1,0 +1,45 @@
+﻿@model IEnumerable<MySchool.Models.Class>
+
+@{
+    ViewData["Title"] = "ClassList";
+}
+
+<h1>ClassList</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                IdClass
+            </th>
+            <th>
+                NameClass
+            </th>
+            <th>
+                IdTeacher
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @item.IdClass
+            </td>
+            <td>
+                @item.NameClass
+            </td>
+            <td>
+                @item.IdTeacher
+            </td>
+            <td>
+                <a asp-action="ClassDetail" asp-route-id="@item.IdClass">Detailss</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

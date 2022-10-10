@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Teacher>
+
+@{
+    ViewData["Title"] = "Admin Page";
+}
+
+<h1>List Teachers</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdTeacher)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NameTeacher)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdTeacher)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameTeacher)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdTeacher">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdTeacher">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

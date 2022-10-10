@@ -1,0 +1,64 @@
+﻿
+<div>
+    <h4>Class</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            IdCLass
+        </dt>
+        <dd class="col-sm-10">
+            @ViewBag.cl.IdClass
+        </dd>
+        <dt class="col-sm-2">
+            Class
+        </dt>
+        <dd class="col-sm-10">
+            @ViewBag.cl.NameClass
+        </dd>
+        <dt class="col-sm-2">
+            Teacher
+        </dt>
+        <dd class="col-sm-10">
+            @ViewBag.Teacher.NameTeacher
+        </dd>
+    </dl>
+</div>
+<br>
+<h4>List Class</h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Gender
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                PhoneNumber
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.Students)
+        {
+            <tr>
+                <td>
+                    @item.NameStudent
+                </td>
+                <td>
+                    @item.Gender
+                </td>
+                <td>
+                    @item.Email
+                </td>
+                <td>
+                    @item.PhoneNumber
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

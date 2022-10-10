@@ -1,0 +1,18 @@
+﻿CmsShoppingCartContext -- ManagerStudentContext
+Page -- Student
+Database: CmsShoppingCartContext -- MySchool
+	int Id
+	nvarchar Tile
+	nvarchar Slug
+	nvarchar Content
+	int Sorting
+all not null
+
+IdStudent
+Name
+Email
+PhoneNumber
+Address
+IdClass
+
+PagesController -- StudentsContronller
