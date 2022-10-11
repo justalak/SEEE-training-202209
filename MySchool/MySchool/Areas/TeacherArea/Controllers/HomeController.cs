@@ -23,14 +23,17 @@ namespace MySchool.Areas.TeacherArea.Controllers
         // GET: TeacherArea/Teachers
         public async Task<IActionResult> Index()
         {
-            Teacher teacher = await _context.Teachers.FirstOrDefaultAsync(x => x.IdTeacher == 3);
-            return View(teacher);
+            //Teacher teacher = await _context.Teachers.FirstOrDefaultAsync(x => x.IdTeacher == 3);
+            var tc = _context.Teachers.FromSqlRaw("SELECT * FROM dbo.Teachers WHERE IdTeacher = 2").ToList();
+            List<Teacher> teachers = tc;
+            return View(teachers.FirstOrDefault());
         }
 
         // GET: TeacherArea/Teachers/Edit/5
         public async Task<IActionResult> Edit()
         {
             Teacher teacher = await _context.Teachers.FirstOrDefaultAsync(x => x.IdTeacher == 3);
+
             if (teacher == null)
             {
                 return NotFound();
@@ -59,10 +62,9 @@ namespace MySchool.Areas.TeacherArea.Controllers
             return View(classList);
         }
 
-        public async Task<IActionResult> ClassDetail(string id)
+        public async Task<IActionResult> ClassDetail(int id)
         {
-            int idd = 3;
-            IQueryable<Student> students = from student in _context.Students where student.IdClass == idd select student;
+            IQueryable<Student> students = from student in _context.Students where student.IdClass == id select student;
             List<Student> studentList = await students.ToListAsync();
             //return students.Count() == 0 ? NotFound() : (IActionResult)View(students);
             return View(studentList);

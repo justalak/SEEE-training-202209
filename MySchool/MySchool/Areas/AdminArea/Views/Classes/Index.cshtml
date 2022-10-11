@@ -4,43 +4,47 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
-
 <p>
     <a asp-action="Create">Add new Class</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                IdClass
-            </th>
-            <th>
-                Name Class
-            </th>
-            <th>
-                IdTeacher
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @item.IdClass
-            </td>
-            <td>
-                @item.NameClass
-            </td>
-            <td>
-                @item.IdTeacher
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.IdClass">Edit</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdClass">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+
+<div class="row py-5">
+    <div class="col-lg-10 mx-auto">
+        <div class="card rounded shadow border-0">
+            <div class="card-body p-5 bg-white rounded">
+                <div class="table-responsive">
+                    <table id="example" style="width:100%" class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th>IdClass</th>
+                                <th>Name Class</th>
+                                <th>IdTeacher</th>
+                                <th class="col-lg-2">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @item.IdClass
+                                    </td>
+                                    <td>
+                                        @item.NameClass
+                                    </td>
+                                    <td>
+                                        @item.IdTeacher
+                                    </td>
+                                    <td>
+                                        <a asp-action="Edit" asp-route-id="@item.IdClass">Edit</a> |
+                                        <a asp-action="Delete" asp-route-id="@item.IdClass">Delete</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

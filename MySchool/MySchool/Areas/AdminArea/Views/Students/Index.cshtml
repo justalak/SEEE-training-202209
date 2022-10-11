@@ -4,73 +4,50 @@
     ViewData["Title"] = "Admin Page";
 }
 
-<h1>List Students</h1>
-
 <p>
     <a asp-action="Create">Add new Student</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @*@Html.DisplayNameFor(model => model.IdStudent)*@
-                Id
-            </th>
-            <th>
-                Fullname
-            </th>
-            <th>
-                Gender
-            </th>
-            <th>
-                Email
-            </th>
-            <th>
-                Phone Number
-            </th>
-            <th>
-                Score
-            </th>
-            <th>
-                IdClass
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @item.IdStudent
-            </td>
-            <td>
-                @item.NameStudent
-            </td>
-            <td>
-                @item.Gender
-            </td>
-            <td>
-                @item.Email
-            </td>
-            <td>
-                @item.PhoneNumber
-            </td>
-            <td>
-                @item.Score
-            </td>
-            <td>
-                @item.IdClass
-            </td>
-            <td>
-@*                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
 
-                <a asp-action="Edit" asp-route-id="@item.IdStudent">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.IdStudent">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdStudent">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="row py-5">
+    <div class="col-lg-15 mx-auto">
+        <div class="card rounded shadow border-0">
+            <div class="card-body p-5 bg-white rounded">
+                <div class="table-responsive">
+                    <table id="example" style="width:100%" class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Fullname</th>
+                                <th>Gender</th>
+                                <th>Email</th>
+                                <th>Phone Number</th>
+                                <th>Score</th>
+                                <th>IdClass</th>
+                                <th class="col-lg-2">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.IdStudent</td>
+                                    <td>@item.NameStudent</td>
+                                    <td>@item.Gender</td>
+                                    <td>@item.Email</td>
+                                    <td>@item.PhoneNumber</td>
+                                    <td>@item.Score</td>
+                                    <td>@item.IdClass</td>
+                                    <td>
+                                        <a asp-action="Edit" asp-route-id="@item.IdStudent">Edit</a> |
+                                        <a asp-action="Details" asp-route-id="@item.IdStudent">Details</a> |
+                                        <a asp-action="Delete" asp-route-id="@item.IdStudent">Delete</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

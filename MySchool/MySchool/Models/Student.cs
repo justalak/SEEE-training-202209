@@ -10,7 +10,7 @@ namespace MySchool.Models
         [RegularExpression(@"^[a-zA-Z\s]*$", ErrorMessage = "Only allow letters")]
         public string NameStudent { get; set; }
         [StringLength(10, ErrorMessage = "Gender length can't be more than 10")]
-        public string? Gender { get; set; }
+        public string? Gender { get; set; } = "Male";
         [EmailAddress(ErrorMessage = "Must be Email")]
         public string? Email { get; set; }
         [Phone(ErrorMessage = "Must be phone number")]
@@ -19,5 +19,11 @@ namespace MySchool.Models
         public int? Score { get; set; }
         [Range(0, 10, ErrorMessage = "IdClass must in range 0 to 10")]
         public int? IdClass { get; set; }
+    }
+
+    public enum Gender
+    {
+        Male = 1,
+        Female = 2
     }
 }

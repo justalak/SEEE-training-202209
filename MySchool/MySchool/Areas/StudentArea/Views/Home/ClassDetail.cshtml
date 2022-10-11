@@ -23,42 +23,41 @@
         </dd>
     </dl>
 </div>
-<br>
-<h4>List Class</h4>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                Name
-            </th>
-            <th>
-                Gender
-            </th>
-            <th>
-                Email
-            </th>
-            <th>
-                PhoneNumber
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in ViewBag.Students)
-        {
-            <tr>
-                <td>
-                    @item.NameStudent
-                </td>
-                <td>
-                    @item.Gender
-                </td>
-                <td>
-                    @item.Email
-                </td>
-                <td>
-                    @item.PhoneNumber
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+
+<div class="row py-5">
+    <div class="col-lg-15 mx-auto">
+        <div class="card rounded shadow border-0">
+            <div class="card-body p-5 bg-white rounded">
+                <div class="table-responsive">
+                    <table id="example" style="width:100%" class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Fullname</th>
+                                <th>Gender</th>
+                                <th>Email</th>
+                                <th>Phone Number</th>
+                                <th>Score</th>
+                                <th>IdClass</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in ViewBag.Students)
+                            {
+                                <tr>
+                                    <td>@item.IdStudent</td>
+                                    <td>@item.NameStudent</td>
+                                    <td>@item.Gender</td>
+                                    <td>@item.Email</td>
+                                    <td>@item.PhoneNumber</td>
+                                    <td>@item.Score</td>
+                                    <td>@item.IdClass</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
