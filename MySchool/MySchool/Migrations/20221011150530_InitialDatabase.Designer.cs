@@ -10,8 +10,8 @@ using MySchool.Infrastructure;
 namespace MySchool.Migrations
 {
     [DbContext(typeof(ManagerSchoolContext))]
-    [Migration("20221007105239_AddClass")]
-    partial class AddClass
+    [Migration("20221011150530_InitialDatabase")]
+    partial class InitialDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -61,6 +61,9 @@ namespace MySchool.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Password")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("PhoneNumber")
                         .HasColumnType("nvarchar(max)");
 
@@ -79,8 +82,14 @@ namespace MySchool.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("NameTeacher")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("IdTeacher");

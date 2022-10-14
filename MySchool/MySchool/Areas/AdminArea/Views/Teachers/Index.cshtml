@@ -4,9 +4,6 @@
     ViewData["Title"] = "Admin Page";
 }
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 
 <div class="row py-5">
     <div class="col-lg-10 mx-auto">
@@ -18,7 +15,8 @@
                             <tr>
                                 <th>Id</th>
                                 <th>Fullname</th>
-                                <th class="col-lg-2">Actions</th>
+                                <th>Email</th>
+                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -27,6 +25,7 @@
                                 <tr>
                                     <td>@item.IdTeacher</td>
                                     <td>@item.NameTeacher</td>
+                                    <td>@item.Email</td>
                                     <td>
                                         <a asp-action="Edit" asp-route-id="@item.IdTeacher">Edit</a> |
                                         <a asp-action="Delete" asp-route-id="@item.IdTeacher">Delete</a>
@@ -35,6 +34,11 @@
                             }
                         </tbody>
                     </table>
+                    <div class="container" style="margin-top: 20px">
+                        <a asp-action="Create">
+                            <button type="button" class="btn btn-primary btn-lg btn-block">Create</button>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MySchool.Infrastructure;
 using MySchool.Models;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -18,14 +20,44 @@ namespace MySchool.Areas.StudentArea.Controllers
             _context = context;
         }
         public int id = 1;
-
+        public IActionResult Login() { return View(); }
+        [HttpPost]
+        public async Task<IActionResult> Login(Student student)
+        {
+            var check = _context.Students.Where(x => x.Email == student.Email && x.Password == student.Password);
+            if (check.Any())
+            {
+                // Add session
+                HttpContext.Session.SetString("StudentSession", JsonConvert.SerializeObject(check.FirstOrDefault()));
+                HttpContext.Session.SetString("Role", "Student");
+                return RedirectToAction("Index");
+            }
+            return RedirectToAction("Login");
+        }
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return View("Login");
+        }
         public async Task<IActionResult> Index()
         {
-            Student student = await _context.Students.FirstOrDefaultAsync(x => x.IdStudent == id);
-            return View(student);
+            //Student student = await _context.Students.FirstOrDefaultAsync(x => x.IdStudent == id);
+            //return View(student);
+
+            if (CheckSession())
+            {
+                var check = JsonConvert.DeserializeObject<Student>(HttpContext.Session.GetString("StudentSession"));
+                Student student = check;
+                return View(student);
+            }
+            return View("Login");
         }
         public async Task<IActionResult> ClassDetail()
         {
+            if (!CheckSession())
+            {
+                return View("../Home/Login");
+            }
             IQueryable<Student> studentClass = from student in _context.Students where student.IdClass == 1 select student;
             List<Student> studentsList = await studentClass.ToListAsync();
             Class cl = await _context.Classes.FirstOrDefaultAsync(x => x.IdClass == 1);
@@ -39,6 +71,10 @@ namespace MySchool.Areas.StudentArea.Controllers
         }
         public async Task<IActionResult> Edit()
         {
+            if (!CheckSession())
+            {
+                return View("../Home/Login");
+            }
             Student student = await _context.Students.FirstOrDefaultAsync(x => x.IdStudent == id);
             if (student == null)
             {
@@ -51,6 +87,10 @@ namespace MySchool.Areas.StudentArea.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit(Student student)
         {
+            if (!CheckSession())
+            {
+                return View("../Home/Login");
+            }
             if (ModelState.IsValid)
             {
                 var emailUnique = await _context.Students.Where(x => x.IdStudent != student.IdStudent).FirstOrDefaultAsync(x => x.Email == student.Email);
@@ -66,6 +106,14 @@ namespace MySchool.Areas.StudentArea.Controllers
                 return RedirectToAction("Edit", new { id = student.IdStudent });
             }
             return View(student);
+        }
+        public bool CheckSession()
+        {
+            if (HttpContext.Session.GetString("Role") == "Student")
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

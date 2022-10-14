@@ -1,7 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace MySchool.Models
 {
+    [Serializable]
     public class Student
     {
         [Key]
@@ -13,17 +15,12 @@ namespace MySchool.Models
         public string? Gender { get; set; } = "Male";
         [EmailAddress(ErrorMessage = "Must be Email")]
         public string? Email { get; set; }
+        [StringLength(6, ErrorMessage = "Gender length can't be more than 6")]
+        public string? Password { get; set; }
         [Phone(ErrorMessage = "Must be phone number")]
         public string? PhoneNumber { get; set; }
         [Range(0, 10, ErrorMessage = "Score must in range 0 to 10")]
         public int? Score { get; set; }
-        [Range(0, 10, ErrorMessage = "IdClass must in range 0 to 10")]
         public int? IdClass { get; set; }
-    }
-
-    public enum Gender
-    {
-        Male = 1,
-        Female = 2
     }
 }

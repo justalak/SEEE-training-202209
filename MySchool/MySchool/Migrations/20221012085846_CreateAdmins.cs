@@ -2,28 +2,30 @@
 
 namespace MySchool.Migrations
 {
-    public partial class AddTeacher : Migration
+    public partial class CreateAdmins : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Teachers",
+                name: "Admins",
                 columns: table => new
                 {
-                    IdTeacher = table.Column<int>(nullable: false)
+                    IdAdmin = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    NameTeacher = table.Column<string>(nullable: false)
+                    NameAdmin = table.Column<string>(nullable: false),
+                    Email = table.Column<string>(nullable: true),
+                    Password = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Teachers", x => x.IdTeacher);
+                    table.PrimaryKey("PK_Admins", x => x.IdAdmin);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Teachers");
+                name: "Admins");
         }
     }
 }

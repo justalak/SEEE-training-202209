@@ -10,8 +10,8 @@ using MySchool.Infrastructure;
 namespace MySchool.Migrations
 {
     [DbContext(typeof(ManagerSchoolContext))]
-    [Migration("20221007081934_AddTeacher")]
-    partial class AddTeacher
+    [Migration("20221012085846_CreateAdmins")]
+    partial class CreateAdmins
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,6 +20,47 @@ namespace MySchool.Migrations
                 .HasAnnotation("ProductVersion", "3.1.29")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("MySchool.Models.Admin", b =>
+                {
+                    b.Property<int>("IdAdmin")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NameAdmin")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("IdAdmin");
+
+                    b.ToTable("Admins");
+                });
+
+            modelBuilder.Entity("MySchool.Models.Class", b =>
+                {
+                    b.Property<int>("IdClass")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("IdTeacher")
+                        .HasColumnType("int");
+
+                    b.Property<string>("NameClass")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("IdClass");
+
+                    b.ToTable("Classes");
+                });
 
             modelBuilder.Entity("MySchool.Models.Student", b =>
                 {
@@ -42,6 +83,9 @@ namespace MySchool.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Password")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("PhoneNumber")
                         .HasColumnType("nvarchar(max)");
 
@@ -60,8 +104,14 @@ namespace MySchool.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("NameTeacher")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("IdTeacher");

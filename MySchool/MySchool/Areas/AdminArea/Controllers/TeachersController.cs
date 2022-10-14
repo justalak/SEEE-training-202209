@@ -1,11 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MySchool.Infrastructure;
 using MySchool.Models;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MySchool.Areas.Admin.Controllers
+namespace MySchool.Areas.AdminArea.Controllers
 {
     [Area("AdminArea")]
     public class TeachersController : Controller
@@ -17,12 +18,27 @@ namespace MySchool.Areas.Admin.Controllers
         }
         public async Task<IActionResult> Index()
         {
+            if (!CheckSession())
+            {
+                return View("../Home/Login");
+            }
             return View(await _context.Teachers.OrderBy(x => x.IdTeacher).ToListAsync());
         }
-        public IActionResult Create() => View();
+        public IActionResult Create()
+        {
+            if (!CheckSession())
+            {
+                return View("../Home/Login");
+            }
+            return View();
+        }
         [HttpPost]
         public async Task<IActionResult> Create(Teacher teacher)
         {
+            if (!CheckSession())
+            {
+                return View("../Home/Login");
+            }
             if (ModelState.IsValid)
             {
                 if (teacher == null)
@@ -39,6 +55,10 @@ namespace MySchool.Areas.Admin.Controllers
         }
         public async Task<IActionResult> Edit(int id)
         {
+            if (!CheckSession())
+            {
+                return View("../Home/Login");
+            }
             Teacher teacher = await _context.Teachers.FirstOrDefaultAsync(x => x.IdTeacher == id);
             if (teacher == null)
             {
@@ -49,6 +69,10 @@ namespace MySchool.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit(Teacher teacher)
         {
+            if (!CheckSession())
+            {
+                return View("../Home/Login");
+            }
             if (ModelState.IsValid)
             {
                 _context.Update(teacher);
@@ -61,6 +85,10 @@ namespace MySchool.Areas.Admin.Controllers
         }
         public async Task<IActionResult> Delete(int id)
         {
+            if (!CheckSession())
+            {
+                return View("../Home/Login");
+            }
             Teacher teacher = await _context.Teachers.FindAsync(id);
             if (teacher == null)
             {
@@ -73,6 +101,14 @@ namespace MySchool.Areas.Admin.Controllers
                 TempData["Success"] = "Successfully deleted";
             }
             return RedirectToAction("Index");
+        }
+        public bool CheckSession()
+        {
+            if (HttpContext.Session.GetString("Role") == "Admin")
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

@@ -28,6 +28,10 @@ namespace MySchool
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddSession(options =>
+            {
+                options.IOTimeout = TimeSpan.FromMinutes(15);
+            });
             services.AddDbContext<ManagerSchoolContext>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
             );
@@ -48,6 +52,8 @@ namespace MySchool
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
+            app.UseSession();
 
             app.UseRouting();
 
