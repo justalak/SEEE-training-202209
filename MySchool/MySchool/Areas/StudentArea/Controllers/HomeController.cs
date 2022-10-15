@@ -19,7 +19,7 @@ namespace MySchool.Areas.StudentArea.Controllers
         {
             _context = context;
         }
-        public int id = 1;
+
         public IActionResult Login() { return View(); }
         [HttpPost]
         public async Task<IActionResult> Login(Student student)
@@ -58,9 +58,11 @@ namespace MySchool.Areas.StudentArea.Controllers
             {
                 return View("../Home/Login");
             }
-            IQueryable<Student> studentClass = from student in _context.Students where student.IdClass == 1 select student;
+            var check = JsonConvert.DeserializeObject<Student>(HttpContext.Session.GetString("StudentSession"));
+            Student st = check;
+            IQueryable<Student> studentClass = from student in _context.Students where student.IdClass == st.IdClass select student;
             List<Student> studentsList = await studentClass.ToListAsync();
-            Class cl = await _context.Classes.FirstOrDefaultAsync(x => x.IdClass == 1);
+            Class cl = await _context.Classes.FirstOrDefaultAsync(x => x.IdClass == st.IdClass);
             Teacher tc = await _context.Teachers.FirstOrDefaultAsync(x => x.IdTeacher == cl.IdTeacher);
 
             ViewBag.Students = studentsList;
@@ -75,7 +77,8 @@ namespace MySchool.Areas.StudentArea.Controllers
             {
                 return View("../Home/Login");
             }
-            Student student = await _context.Students.FirstOrDefaultAsync(x => x.IdStudent == id);
+            var check = JsonConvert.DeserializeObject<Student>(HttpContext.Session.GetString("StudentSession"));
+            Student student = check;
             if (student == null)
             {
                 return NotFound();

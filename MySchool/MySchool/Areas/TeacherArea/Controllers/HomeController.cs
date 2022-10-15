@@ -92,7 +92,10 @@ namespace MySchool.Areas.TeacherArea.Controllers
             {
                 return View("../Home/Login");
             }
-            IQueryable<Class> classes = from cl in _context.Classes where cl.IdTeacher == 3 select cl;
+            var check = JsonConvert.DeserializeObject<Teacher>(HttpContext.Session.GetString("TeacherSession"));
+            Teacher teacher = check;
+
+            IQueryable<Class> classes = from cl in _context.Classes where cl.IdTeacher == teacher.IdTeacher select cl;
             List<Class> classList = await classes.ToListAsync();
 
             return View(classList);
@@ -106,8 +109,7 @@ namespace MySchool.Areas.TeacherArea.Controllers
             }
             IQueryable<Student> students = from student in _context.Students where student.IdClass == id select student;
             List<Student> studentList = await students.ToListAsync();
-            //return students.Count() == 0 ? NotFound() : (IActionResult)View(students);
-            return View(studentList);
+            return students.Count() == 0 ? NotFound() : (IActionResult)View(students);
         }
         public bool CheckSession()
         {
