@@ -15,7 +15,7 @@ namespace MySchool.Models
         public string? Gender { get; set; } = "Male";
         [EmailAddress(ErrorMessage = "Must be Email")]
         public string? Email { get; set; }
-        [StringLength(6, ErrorMessage = "Gender length can't be more than 6")]
+        [Required]
         public string? Password { get; set; }
         [Phone(ErrorMessage = "Must be phone number")]
         public string? PhoneNumber { get; set; }

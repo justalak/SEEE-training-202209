@@ -13,6 +13,7 @@ namespace MySchool.Models
         public string NameAdmin { get; set; }
         [EmailAddress(ErrorMessage = "Must be Email")]
         public string? Email { get; set; }
+        [Required]
         public string? Password { get; set; }
     }
 }
