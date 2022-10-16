@@ -1,0 +1,38 @@
+﻿@model List<StudentManagement.Models.Domain.Student>
+@{
+}
+
+<h1>Student List</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>StudentID</th>
+            <th>Student Name</th>
+            <th>Date of Birth</th>
+            <th>Gender</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Score</th>
+            <th>Class ID</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr class="text-center">
+                <td>@student.StudentId</td>
+                <td>@student.StudentName</td>
+                <td>@student.Dob</td>
+                <td>@student.Gender</td>
+                <td>@student.Email</td>
+                <td>@student.PhoneNumber</td>
+                <td>@student.Score</td>
+                <td>@student.ClassID</td>
+                <td>
+                    <a class="btn btn-sm btn-warning " asp-controller="Student" asp-action="View" asp-route-id="@student.StudentId">View</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

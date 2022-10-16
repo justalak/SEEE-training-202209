@@ -1,0 +1,26 @@
+﻿@model List<StudentManagement.Models.Domain.Class>
+@{
+}
+
+<h1>Class List</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ClassID</th>
+            <th>Class Name</th>
+            <th>Teacher ID</th>
+            <th> </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ClassId</td>
+                <td>@item.ClassName</td>
+                <th>@item.TeacherID</th>
+                
+            </tr>
+        }
+    </tbody>
+</table>

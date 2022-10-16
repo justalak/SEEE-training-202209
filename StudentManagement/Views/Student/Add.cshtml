@@ -1,0 +1,38 @@
+﻿@model StudentManagement.Models.AddStudentViewModel
+@{
+}
+<h1>Add Student</h1>
+<form method="post" action="Add" class="mb-5">
+    <div class="mb-3">
+        <label for="" class="form-label">StudentName</label>
+        <input type="text" class="form-control" asp-for="StudentName" required placeholder="Enter Student Name">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Dob</label>
+        <input type="date" class="form-control" asp-for="Dob" required placeholder="Enter Student Date of Birth">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Gender</label>
+        <input type="text" class="form-control" asp-for="Gender" required placeholder="Enter Gender Male/Female">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Email</label>
+        <input type="email" class="form-control" asp-for="Email" requiredplaceholder="Enter Email">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">PhoneNumber</label>
+        <input type="number" class="form-control" asp-for="PhoneNumber" required placeholder="Enter Phone Number">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Score</label>
+        <input type="number" step="0.5" min="0" max="10" class="form-control" asp-for="Score" required placeholder="Enter Score">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">ClassID</label>
+        <input type="number" class="form-control" asp-for="ClassID" required placeholder="Enter Class ID">
+    </div>
+
+    <div class="form-group">
+    <input type="submit" value="Submit" class="btn btn-sm btn-outline-success floatright" />
+    </div>
+</form>
