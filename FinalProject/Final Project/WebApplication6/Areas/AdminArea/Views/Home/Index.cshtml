@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewData["Title"] = "AdminPage";
+}
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 static">
+            <div class="profile-card">
+                <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="user" class="profile-photo">
+                <h3> Dang Trung Hieu </h3>
+                <h4  class="text-white"><i class="fa fa-user"></i> Admin </h4>
+            </div><!--profile card ends-->
+            <ul class="nav-news-feed">
+                <li> <i class="fa fa-list-alt icon1"> </i>  <div> <a  asp-area="AdminArea" asp-controller="Students" asp-action="Index"> Student </a></div> </li>
+                <li> <i class="fa fa-list-alt icon1"></i>  <div> <a  asp-area="AdminArea" asp-controller="Teachers" asp-action="Index"> Teacher </a> </div>  </li>
+                <li> <i class="fa fa-list-alt icon1"></i>  <div> <a  asp-area="AdminArea" asp-controller="Classes" asp-action="Index"> Class </a></div>   </li>
+                <li> <i class="fa fa-list-alt icon1"></i>  <div> <a  asp-area="default" asp-controller="Home" asp-action="Index"> Home </a></div> </li>
+                <li> <i class="fa fa-list-alt icon1"></i>  <div></div><a href="#"> Logout </a></li>
+           
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers

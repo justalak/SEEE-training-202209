@@ -1,0 +1,134 @@
+﻿@using WebApplication6.Models
+@model IEnumerable<Student>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Admin Page";
+}
+
+<h1>List Students</h1>
+
+<p>
+    <a asp-action="Create">Add new Student</a>
+</p>
+
+<link href="~/css/AdminArea.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="main-box clearfix">
+				<div class="table-responsive">
+					<table class="table user-list">
+					  <thead>
+                            <tr>
+                                <th>
+                                    <span>
+                                        Id
+                                    </span>        
+                                </th>
+                                <th>
+                                    <span>
+                                        UserName
+                                    </span>
+                                </th>
+                                <th>
+                                    <span>
+                                        FullName
+                                    </span>
+                                </th>
+                                <th>
+                                    <span>
+                                        Gender
+                                    </span>
+                                </th>
+                                <th class="text-center">
+                                    <span>
+                                        Email
+                                    </span>
+                                </th>
+                                <th>
+                                    <span>
+                                        Phone Number
+                                    </span>
+                                </th>
+                                <th>
+                                    <span>
+                                        Score
+                                    </span>
+                                </th>
+                                <th>
+                                    <span>
+                                        IdClass
+                                    </span>
+                                </th>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.IdStudent
+                </td>
+                <td>
+                    @item.UserName
+                </td>
+                <td>
+                    @item.NameStudent
+                </td>
+                <td>
+                    @item.Gender
+                </td>
+                <td>
+                    @item.Email
+                </td>
+                <td>
+                    @item.PhoneNumber
+                </td>
+                <td>
+                    @item.Score
+                </td>
+                <td>
+                    @item.IdClass
+                </td>
+                    @*   @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+
+                    
+
+                    <td style="width: 20%;">
+                        <a asp-action="Detail" asp-route-id="@item.IdStudent" class="table-link">
+                            <span class="fa-stack">
+                                <i class="fa fa-square fa-stack-2x"></i>
+                                <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                        <a asp-action="Edit" asp-route-id="@item.IdStudent" class="table-link">
+                            <span class="fa-stack">
+                                <i class="fa fa-square fa-stack-2x"></i>
+                                <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                        <a asp-action="Delete" asp-route-id="@item.IdStudent" class="table-link danger">
+                            <span class="fa-stack">
+                                <i class="fa fa-square fa-stack-2x"></i>
+                                <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </td>
+            </tr>
+        }
+    </tbody>
+						
+					</table>
+				
+		</div>
+	    </div>
+        </div>
+    </div>
+</div>

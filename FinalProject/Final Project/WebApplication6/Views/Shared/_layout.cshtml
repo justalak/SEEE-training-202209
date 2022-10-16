@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - SchoolManagerment</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+
+    </div>
+
+    <section class="footer">
+
+        <div class="box-container">
+
+            <div class="box">
+                <h3>quick links</h3>
+                    <a href="#home">home</a>
+                    <a asp-area="AdminArea" asp-controller="Home" asp-action="Index"><span>Admin</span></a>
+                    <a asp-area="TeacherArea" asp-controller="Home" asp-action="Index"><span>Teacher</span></a>
+                    <a asp-area="StudentArea" asp-controller="Home" asp-action="Index"><span>Student</span></a>
+                    <a asp-area="LoginArea" asp-controller="Home" asp-action="Index"><span>Login</span></a>
+                    <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </div>
+
+            <div class="box">
+                <h3>contact info</h3>
+                <a href="#"> <i class="fas fa-phone"></i> +123-456-7890 </a>
+                <a href="#"> <i class="fas fa-phone"></i> +111-222-3333 </a>
+                <a href="#"> <i class="fas fa-envelope"></i> hieuthieugia147@gmail.com </a>
+                <a href="#"> <i class="fas fa-envelope"></i> hieuthieugia147@gmail.com </a>
+                <a href="#"> <i class="fas fa-map-marker-alt"></i> Quang Trung,Kien Xuong,Thai Binh </a>
+            </div>
+
+            <div class="box">
+                <h3>follow us</h3>
+                <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+                <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+                <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+                <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
+                <a href="#"> <i class="fab fa-pinterest"></i> pinterest </a>
+            </div>
+
+        </div>
+
+        <div class="credit"> created by <span> Dang Trung Hieu</span>  </div>
+
+    </section>
+     
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers

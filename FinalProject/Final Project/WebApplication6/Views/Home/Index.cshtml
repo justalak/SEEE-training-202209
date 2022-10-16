@@ -1,0 +1,70 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Managerment </title>
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="~/css/site.css">
+
+   
+
+</head>
+<body>
+    <header class="header">
+
+        <a href="#" class="logo"> <i class="fas fa-school"></i> SCHOOL MANAGERMENT </a>
+
+        <nav class="navbar">
+            <a href="">home</a>
+            <a asp-area="AdminArea" asp-controller="Home" asp-action="Index"><span>Admin</span></a>
+            <a asp-area="LoginArea" asp-controller="Home" asp-action="Index"><span>Login</span></a>
+        </nav>
+
+        <div id="menu-btn" class="fas fa-bars"></div>
+
+    </header>
+    <section class="home" id="home">
+
+        <div class="image">
+            <img  src="" alt="">
+            <div class="content">
+                <h1> WelCome</h1>
+                <p>sign up for more advice and service</p>
+                <a href="#" class="btn"> sign up <span class="fas fa-chevron-right"></span> </a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="icons-container">
+
+        <div class="icons">
+            <i class="fas fa-user-md"></i>
+            <h3>3000+</h3>
+            <p>Students</p>
+        </div>
+
+        <div class="icons">
+            <i class="fas fa-graduation-cap"></i>
+            <h3>100</h3>
+            <p> Professor and associate professor</p>
+        </div>
+
+        <div class="icons">
+            <i class="fas fa-school"></i>
+            <h3>8h-20h</h3>
+            <p>working time</p>
+        </div>
+
+    </section>
+</body>
+</html>

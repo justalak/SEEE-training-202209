@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - LoginIdentityCore</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <div class="row justify-content-md-start">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    Wellcome
+                </div>
+                <div class="card-body">
+                    @if (Session["FullName"] != null)
+                    {
+                        <p>Name: @Session["FullName"].ToString()</p>
+                        <p>Email: @Session["Email"].ToString()</p>
+                        <a href="@Url.Action("Logout","Home")" class="btn btn-warning">Logout</a>
+                    }
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <partial name="~/Views/Shared/_ValidationScriptsPartial.cshtml" />
+    <script src="~/js/site.js" asp-append-version="true"></script>
+   
+</body>
+</html>
