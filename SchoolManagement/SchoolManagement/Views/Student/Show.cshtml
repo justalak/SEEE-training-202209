@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Student Page";
+}
+<form class="d-flex mb-4" asp-controller="Student" asp-action="SearchShow" method="post">
+    <input class="form-control me-2 w-25" type="search" placeholder="Search" aria-label="Search" name="search">
+    <button class="btn btn-outline-success" type="submit">Search</button>
+</form>
+
+<div class="container mt-3 h4">
+    <div class="shadow p-4 mb-4 bg-white mx-auto"><h1>Student Table</h1></div>
+    
+    
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Score</th>
+                <th>Class ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (ClassInfo classs in ViewBag.ClassData)
+            {
+                <tr>
+                    <td>@classs.ClassId</td>
+                    <td>@classs.ClassName</td>
+                    <td>@classs.ClassQuantity</td>
+                    <td>@classs.TeacherId</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

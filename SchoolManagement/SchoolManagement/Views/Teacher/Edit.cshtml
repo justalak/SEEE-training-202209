@@ -1,0 +1,65 @@
+﻿@{
+    ViewData["Title"] = "Edit Teacher";
+}
+<div class="card-header mb-2"> <p class="h1">Enter teacher ID</p></div>
+<form class="d-flex mb-4" asp-controller="Teacher" asp-action="Search" method="post">
+    <input class="form-control me-2 w-25" type="text" placeholder="Search" aria-label="Search" name="search">
+    <button class="btn btn-outline-success" type="submit">Search</button>
+</form>
+
+<div class="card bg-light h2">
+    <article class="card-body mx-auto" style="max-width: 400px;">
+        <h1 class="card-title mt-3 text-center">Edit Account Teacher</h1>
+        <p class="text-center">Please change teacher information below</p>
+        <form>
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                </div>
+                <input name="" class="form-control" placeholder="Full name" type="text">
+            </div> <!-- form-group// -->
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-solid fa-transgender"></i> </span>
+                </div>
+
+                <div class="form-check ml-2">
+                    <input type="radio" class="form-check-input" id="radio1" name="optradio" value="male" checked>
+                    <label class="form-check-label h5" for="radio1">Male</label>
+                </div>
+                <div><p>   </p></div>
+                <div class="form-check ml-2">
+                    <input type="radio" class="form-check-input" id="radio2" name="optradio" value="female">
+                    <label class="form-check-label h5" for="radio2">Female</label>
+                </div>
+
+            </div> <!-- form-group// -->
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                </div>
+                <input name="" class="form-control" placeholder="Email address" type="email">
+            </div> <!-- form-group// -->
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+                </div>
+                <input name="" class="form-control" placeholder="Phone number" type="text">
+            </div> <!-- form-group// -->
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block font-weight-bold"> Save Account Teacher  </button>
+                <button type="reset" class="btn btn-warning btn-block font-weight-bold">Reset</button>
+            </div> <!-- form-group// -->
+        </form>
+    </article>
+</div> <!-- card.// -->
+
+
+
+
+
+
+<style>
+
+</style>

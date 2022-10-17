@@ -1,0 +1,77 @@
+﻿@{
+    ViewData["Title"] = "Add Class";
+}
+
+
+<div class="card bg-light h2">
+    <article class="card-body mx-auto" style="max-width: 400px;">
+        <h1 class="card-title mt-3 text-center">Create Class</h1>
+        <p class="text-center">Please fill out the information below</p>
+        <form asp-controller="Class" asp-action="Save" method=" post">
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                </div>
+                <input name="ClassId" class="form-control" placeholder="Class ID" type="text">
+            </div> <!-- form-group// -->
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                </div>
+                <input name="ClassName" class="form-control" placeholder="Class name" type="text">
+            </div> <!-- form-group// -->
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                </div>
+                <input name="ClassQuantity" class="form-control" placeholder="Quantity Student" type="number">
+            </div> <!-- form-group// -->
+
+
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-regular fa-id-card"></i> </span>
+                </div>
+                <input name="ClassTeacherId" class="form-control" placeholder="Teacher ID" type="number">
+            </div> <!-- form-group// -->
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block font-weight-bold"> Add Class  </button>
+                <button type="reset" class="btn btn-warning btn-block font-weight-bold">Reset</button>
+            </div> <!-- form-group// -->
+        </form>
+    </article>
+</div> <!-- card.// -->
+
+
+<div class="container mt-3 h4">
+    <div class="shadow p-4 mb-4 bg-white mx-auto"><h1>Class Table</h1></div>
+
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Teacher ID</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                @if (ViewBag != null){
+                    <th>@ViewBag.ClassId</th>
+                    <th>@ViewBag.ClassName</th>
+                    <th>@ViewBag.ClassQuantity</th>
+                    <th>@ViewBag.ClassTeacherId</th>
+                }
+                
+            </tr>
+        </tbody>
+    </table>
+</div>
+<style>
+
+</style>

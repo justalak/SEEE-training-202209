@@ -1,0 +1,80 @@
+﻿@{
+    ViewData["Title"] = "Edit Student";
+}
+
+<form class="d-flex mb-4" asp-controller="Student" asp-action="Search" method="post">
+    <input class="form-control me-2 w-25" type="text" placeholder="Search" aria-label="Search" name="search">
+    <button class="btn btn-outline-success" type="submit">Search</button>
+</form>
+
+<div class="card-header mb-2"> <p class="h1">Enter student ID</p></div>
+<form class="d-flex mb-4">
+    <input class="form-control me-2 w-25" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success" type="submit" asp-controller="Student" asp-action="Edit">Search</button>
+</form>
+
+<div class="card bg-light h2">
+    <article class="card-body mx-auto" style="max-width: 400px;">
+        <h1 class="card-title mt-3 text-center">Edit Account Student</h1>
+        <p class="text-center">Please change student information below</p>
+        <form asp-controller="Student" asp-action="Edit">
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                </div>
+                <input name="StudentId" class="form-control" placeholder="Class ID" type="text" value="@ViewBag.StudentId">
+            </div> <!-- form-group// -->
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                </div>
+                <input name="StudentName" class="form-control" placeholder="Full name" type="text" value="@ViewBag.StudentName">
+            </div> <!-- form-group// -->
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-solid fa-transgender"></i> </span>
+                </div>
+
+                <div class="form-check ml-2">
+                    <input type="radio" class="form-check-input" id="StudentGender" name="optradio" value="male" checked>
+                    <label class="form-check-label h5" for="radio1">Male</label>
+                </div>
+                <div><p>   </p></div>
+                <div class="form-check ml-2">
+                    <input type="radio" class="form-check-input" id="radio2" name="StudentGender" value="female">
+                    <label class="form-check-label h5" for="radio2">Female</label>
+                </div>
+
+            </div> <!-- form-group// -->
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                </div>
+                <input name="StudentEmail" class="form-control" placeholder="Email address" type="email" value="@ViewBag.StudentEmail">
+            </div> <!-- form-group// -->
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+                </div>
+                <input name="StudentPhoneNumber" class="form-control" placeholder="Phone number" type="text" value="@ViewBag.StudentPhoneNumber">
+            </div> <!-- form-group// -->
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-solid fa-star"></i> </span>
+                </div>
+                <input name="StudentScore" class="form-control" placeholder="Score" type="text" value="@ViewBag.StudentScore">
+            </div> <!-- form-group// -->
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-regular fa-id-card"></i> </span>
+                </div>
+                <input name="StudentClassId" class="form-control" placeholder="Class ID" type="text" value="@ViewBag.StudentClassId">
+            </div> <!-- form-group// -->
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block font-weight-bold"> Save Account Student  </button>
+                <button type="reset" class="btn btn-warning btn-block font-weight-bold">Reset</button>
+            </div> <!-- form-group// -->
+        </form>
+    </article>
+</div> <!-- card.// -->

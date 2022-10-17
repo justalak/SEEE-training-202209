@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Teacher Page";
+}
+
+<form class="d-flex mb-4" asp-controller="Class" asp-action="SearchShow" method="post">
+    <input class="form-control me-2 w-25" type="search" placeholder="Search" aria-label="Search" name="search">
+    <button class="btn btn-outline-success" type="submit">Search</button>
+</form>
+<div class="container mt-3 h4">
+    <div class="shadow p-4 mb-4 bg-white mx-auto"><h1>Teacher Table</h1></div>
+
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (TeacherInfo teacher in ViewBag.TeacherData)
+            {
+                <tr>
+                    <td>@teacher.TeacherId</td>
+                    <td>@teacher.TeacherName</td>
+                    <td>@teacher.TeacherGender</td>
+                    <td>@teacher.TeacherEmail</td>
+                    <td>@teacher.TeacherPhoneNumber</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

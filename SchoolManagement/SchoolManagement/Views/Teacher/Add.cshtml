@@ -1,0 +1,90 @@
+﻿@{
+    ViewData["Title"] = "Add Teacher";
+}
+
+<div class="card bg-light h2">
+    <article class="card-body mx-auto" style="max-width: 400px;">
+        <h1 class="card-title mt-3 text-center">Create Account Teacher</h1>
+        <p class="text-center">Please fill out the information below</p>
+        <form asp-controller="Teacher" asp-action="Save" method=" post">
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                </div>
+                <input name="TeacherId" class="form-control" placeholder="Teacher ID" type="text">
+            </div> <!-- form-group// -->
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                </div>
+                <input name="TeacherName" class="form-control" placeholder="Full name" type="text">
+            </div> <!-- form-group// -->
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-solid fa-transgender"></i> </span>
+                </div>
+
+                <div class="form-check ml-2">
+                    <input type="radio" class="form-check-input" id="radio1" name="TeacherGender" value="male" checked>
+                    <label class="form-check-label h5" for="radio1">Male</label>
+                </div>
+                <div><p>   </p></div>
+                <div class="form-check ml-2">
+                    <input type="radio" class="form-check-input" id="radio2" name="TeacherGender" value="female">
+                    <label class="form-check-label h5" for="radio2">Female</label>
+                </div>
+
+            </div> <!-- form-group// -->
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                </div>
+                <input name="TeacherEmail" class="form-control" placeholder="Email address" type="email">
+            </div> <!-- form-group// -->
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+                </div>
+                <input name="TeacherPhoneNumber" class="form-control" placeholder="Phone number" type="text">
+            </div> <!-- form-group// -->
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block font-weight-bold"> Add Account Teacher  </button>
+                <button type="reset" class="btn btn-warning btn-block font-weight-bold">Reset</button>
+            </div> <!-- form-group// -->
+        </form>
+    </article>
+</div> <!-- card.// -->
+<div class="container mt-3 h4">
+    <div class="shadow p-4 mb-4 bg-white mx-auto"><h1>Teacher Table</h1></div>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                @if (ViewBag != null)
+                {
+                    <td>@ViewBag.TeacherId</td>
+                    <td>@ViewBag.TeacherName</td>
+                    <td>@ViewBag.TeacherGender</td>
+                    <td>@ViewBag.TeacherEmail</td>
+                    <td>@ViewBag.TeacherPhoneNumber</td>
+                }
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<style>
+
+</style>

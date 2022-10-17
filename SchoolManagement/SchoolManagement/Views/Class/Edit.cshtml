@@ -1,0 +1,51 @@
+﻿@{
+    ViewData["Title"] = "Edit Class";
+}
+<div class="card-header mb-2"> <p class="h1">Enter class ID</p></div>
+<form class="d-flex mb-4" asp-controller="Class" asp-action="Search" method="post">
+    <input class="form-control me-2 w-25" type="text" placeholder="Search" aria-label="Search" name="search">
+    <button class="btn btn-outline-success" type="submit">Search</button>
+</form>
+
+<div class="card bg-light h2">
+    <article class="card-body mx-auto" style="max-width: 400px;">
+        <h1 class="card-title mt-3 text-center">Create Class</h1>
+        <p class="text-center">Please change class information below</p>
+        <form asp-controller="Class" asp-action="Save" method=" post">
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                </div>
+                <input name="ClassId" class="form-control" placeholder="Class ID" type="text" value="@ViewBag.classId">
+            </div> <!-- form-group// -->
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                </div>
+                <input name="ClassName" class="form-control" placeholder="Class name" type="text" value="@ViewBag.ClassName">
+            </div> <!-- form-group// -->
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                </div>
+                <input name="ClassQuantity" class="form-control" placeholder="Quantity Student" type="number" value="@ViewBag.ClassQuantity">
+            </div> <!-- form-group// -->
+
+
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-regular fa-id-card"></i> </span>
+                </div>
+                <input name="ClassTeacherId" class="form-control" placeholder="Teacher ID" type="number" value="@ViewBag.ClassTeacherId">
+            </div> <!-- form-group// -->
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block font-weight-bold"> Update Class  </button>
+                <button type="reset" class="btn btn-warning btn-block font-weight-bold">Reset</button>
+            </div> <!-- form-group// -->
+        </form>
+    </article>
+</div> <!-- card.// -->
+<style>
+
+</style>
